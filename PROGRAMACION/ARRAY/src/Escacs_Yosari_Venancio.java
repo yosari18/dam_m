@@ -18,21 +18,37 @@ public class Escacs_Yosari_Venancio {
         // TODO code application logic here
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("#####RESULTATS#####");
+
         int n;
+        String nomJugador;
+        double puntos;
 
         do {
 
             System.out.print("Total jugadors =");
             n = entrada.nextInt();
-            
 
             if (n <= 2) {
                 System.out.println("Error en datos de entrada ");
             }
 
         } while (n <= 2);
-        System.out.println("///Nom i puntuacions de tots els jugadors///");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese nombre del jugador :");
+            nomJugador = entrada.nextLine();
+            entrada.next();
+
+            do {
+                System.out.print("Ingresar puntuacion del jugador :");
+                puntos = entrada.nextDouble();
+                if (puntos >= 1 && puntos <= 2) {
+                    System.out.println("Los valores tiene que ser entre 1.0 y 2.0");
+
+                }
+
+            } while (puntos >= 1 && puntos <= 2);
+
+        }
 
     }
 
