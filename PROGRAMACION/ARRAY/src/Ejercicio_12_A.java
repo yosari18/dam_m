@@ -41,10 +41,10 @@ public class Ejercicio_12_A {
                     valor = entrada.nextInt();
                     System.out.println("Introducir posicion : ");
                     posicion = entrada.nextInt();
-                    if (posicion<0 || posicion>=num.length){
+                    if (posicion < 0 || posicion >= num.length) {
                         System.out.println("Fuera del array");
-                    }else{
-                    num[posicion]=valor;
+                    } else {
+                        num[posicion] = valor;
                     }
                     entrada.nextLine();
                     break;
@@ -53,7 +53,7 @@ public class Ejercicio_12_A {
                     break;
                 default:
                     System.out.println("Error en datos de entrada");
-                    
+
             }
         } while (seguir == true);
     }
