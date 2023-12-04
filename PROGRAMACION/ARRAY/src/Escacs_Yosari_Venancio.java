@@ -30,11 +30,11 @@ public class Escacs_Yosari_Venancio {
             n = entrada.nextInt();
             entrada.nextLine();
 
-            if (n <= 2) {
+            if (n <=2) {
                 System.out.println("Error en datos de entrada ");
             }
 
-        } while (n <= 2);
+        } while (n<=2);
         //Declaramos los arrays con la cantidad de jugadores
         String[] nomJugador = new String[n];
         double puntos[] = new double[n];
@@ -81,7 +81,7 @@ public class Escacs_Yosari_Venancio {
 
         System.out.println("#####RESULTATS#####");
         System.out.println("Total jugadors =" + n);
-        System.out.println("Puntuació mitjana = " + media);
+        System.out.printf("Puntuació mitjana =%.3f  ", media);
         System.out.println("\n////Nom i puntuacions de tots els jugadors////");
 
         //Mostramos a todos los jugadores 
