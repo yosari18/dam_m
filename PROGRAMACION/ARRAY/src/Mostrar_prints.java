@@ -38,7 +38,7 @@ public class Mostrar_prints {
         double spacio=2.4535478;
         System.out.printf("%+10.2f %n",spacio);//el 10 es modificable ´para dar espacio
         
-        System.out.printf("%10s %n","total");//nose
+        System.out.printf("%10s %n","total");//espacio
     }
     
 }

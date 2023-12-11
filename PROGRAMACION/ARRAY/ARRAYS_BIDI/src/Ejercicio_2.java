@@ -25,7 +25,7 @@ public class Ejercicio_2 {
             System.out.println("Introducir ");
             num=entrada.nextInt();
             for (int j = 0; j < tabla[i].length; j++) {
-                
+                System.out.println("gdh");
                 
             }
             

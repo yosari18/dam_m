@@ -27,7 +27,7 @@ public class Ejercicio_1 {
                 
             }
             System.out.println(Arrays.toString(miarray[i]));
-            System.out.println(Arrays.deepToString(miarray[i]));
+            //System.out.println(Arrays.deepToString(miarray[i]));
         
         }
     }
