@@ -45,7 +45,7 @@ public class Menu_arrays {
 
             switch (respuesta) {
 
-                case "a":
+                case "a"://Pedimos valores al usuario
                     for (int i = 0; i < arr.length; i++) {
                         for (int j = 0; j < arr[i].length; j++) {
                             System.out.print("Ingresar valor a la posicion (" + i + ") y (" + j + ") :");
@@ -59,7 +59,7 @@ public class Menu_arrays {
                 case "b":
                     System.out.print("Introduce numero de filas :");
                     numfilas = entrada.nextInt();
-                    while (numfilas >= arr.length) {
+                    while (numfilas >= arr.length) {//Si el numero de filas que ingreso no es correcto vuelve a pedir
                         System.out.println("La fila " + numfilas + " no existes");
                         System.out.print("Introduce numero de filas :");
                         numfilas = entrada.nextInt();
@@ -67,13 +67,13 @@ public class Menu_arrays {
                     }
 
                     for (int i = numfilas; i < arr.length; i++) {
-                        int suma = 0;
+                        int suma = 0;//Esta variable esta dentro del for porque en cada iteracion se inicializa el valor 0
                         for (int j = 0; j < arr[i].length; j++) {
                             suma = suma + arr[i][j];
 
                         }
 
-                        System.out.println(Arrays.toString(arr[i]) + " = " + suma);
+                        System.out.println(Arrays.toString(arr[i]) + " = " + suma);//Mostramos el arrays de filas y la suma 
                         break;
 
                     }
@@ -89,61 +89,81 @@ public class Menu_arrays {
                         colum = entrada.nextInt();
                     }
                     int suma = 0;
-                    ////falta terminare
+                    int res = 0;
 
+                   
+                    System.out.print("[");
                     for (int i = 0; i < arr.length; i++) {
 
-                        for (int j = colum; j < arr.length; j++) {
+                        for (int j = colum; j < arr.length; j++) {//columnas
                             suma = suma + arr[i][j];
-                            System.out.println("fdgf");
-                            System.out.println(Arrays.toString(arr[colum]));
-                           
-                        }
+                            res = arr[i][j];//pasamos los valores  para ejecutar el array de columnas
+                            break;
 
-                        System.out.println(suma);
+                        }
+                        System.out.print(res + ", ");
 
                     }
+                    System.out.print("]");
+                    System.out.println("=" + suma);
 
                     break;
                 case "d":
                     int sum = 0;
-                    int arr2;   
+                    int arr2;
+                     System.out.print("[");
                     for (int i = 0; i < arr.length; i++) {
-
+                       
                         for (int j = 0; j < arr.length; j++) {
-                            if (Arrays.equals(arr[i], arr[j])) {
+                            if (Arrays.equals(arr[i], arr[j])) {//Comparamos si las posiciones son iguales
                                 sum = sum + arr[i][j];
-                                arr2=arr[i][j];                
-                                System.out.println(arr2);
+                                arr2 = arr[i][j];//Pasamos los valores para ejecutar
+                                System.out.print(arr2+", ");
 
                             }
+                            
 
                         }
+                       
 
                     }
-                    System.out.println(sum);
+                     System.out.print("]");
+                    System.out.println("= "+sum);
 
                     break;
                 case "e":
-                    
+                    int sumadig=0;
+                    int resul;
+                    System.out.print("[");
+                    for (int i = 0; i < arr.length; i++) {
+                        for (int j = arr.length; j < arr[i].length+1; j--) {
+                           sumadig=sumadig+arr[i][j];
+                          // resul=arr[i][j];
+                           // System.out.println(resul);
+                           /*resul=arr[i][j];*/
+                          break;
+                        }
+                        
+                    }
+                    System.out.println("= "+sumadig);
 
                     break;
                 case "f":
-                    int sumMedia=0;
-                    
+                    int sumMedia = 0;
+
                     for (int i = 0; i < arr.length; i++) {
                         for (int j = 0; j < arr[i].length; j++) {
-                            sumMedia=sumMedia+arr[i][j];
+                            sumMedia = sumMedia + arr[i][j];
                         }
                     }
-                    int media =sumMedia/arr.length;
-                    System.out.println("La media es "+media);
+                    int media = sumMedia / arr.length;
+                    System.out.println("La media es " + media);
 
                     break;
 
                 default:
                     System.out.println("sdg");
-            }    
+            }
             entrada.nextLine();
         } while (true);
     }
