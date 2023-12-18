@@ -37,14 +37,16 @@
 
 <p>Cree el archivo Makefile e intente construir los diferentes objetivos, probando el resultado de make , make calcula y make calc.o . Borra todos los archivos objeto y ejecutables entre cada prueba.
 
-![Alt text](to-do3_0.png)
+![Alt text](makef_1.png)
+![Alt text](makef1_1.png)
 
 
 </p>
 
 <p>Prueba a invertir el orden de las reglas en el Makefile , primero la regla de calc.o y después calcula . Ejecuta el make con este Makefile y explica los resultados.
 
-![Alt text](to-do3_1.png)
+![Alt text](makef2_1.png)
+![Alt text](makef2_2.png)
 
 - En la regla 1: "calcula " es la primera en el Makefile. Al ejecutar "make" construye "calcula"
 - En la regla 2: "calc.o" es laprimera en el Makefile. Al ejecutar "make" construye calc.o si es necesario, luego se construirá "calcula" utilizando "calc.o" 

@@ -1,10 +1,10 @@
 calc.o: calc.c calc.h
-        gcc -g -Wall -c calc.c -o calc.o
+	gcc -g -Wall -c calc.c -o calc.o
 calcula: calcula.c calc.o
-        gcc -Wall -g calcula.c calc.o -o calcula
+	gcc -Wall -g calcula.c calc.o -o calcula
+.PHONY : clean
 clean:
-        rm -f calcula calc.o
-
+	rm -f calcula calc.o
 
 
 
