@@ -9,9 +9,8 @@
  */
 public class Ejemplo_1 {
 
-    
-        public static void imprimiendoHolaMundo() {
-        System.out.println("Hola mundo");
+    public static void imprimeHolaMundo() {
+        System.out.println("Hola mundo ");
     }
 
     public static int doble(int a) {
@@ -23,16 +22,14 @@ public class Ejemplo_1 {
     public static int multiplica(int a, int b) {
         int resultado = a * b;
         return resultado;
-
     }
 
     public static void main(String[] args) {
-        imprimiendoHolaMundo();
-        int a=doble(10);
-        int b=multiplica(3,5);
-        System.out.println("Funcion doble: "+a+"\nFuncion multiplica: "+b);
-        
+
+        imprimeHolaMundo();
+        System.out.println("El resultado de 4 * 6 es : " + multiplica(4, 6));
+        System.out.println("El doble de 50 es :" + doble(50));
+
     }
-    
-    
+
 }
