@@ -1,4 +1,6 @@
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /*
@@ -19,14 +21,15 @@ public class Ejercicio_1 {
     }
 
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        PrintStream pri = new PrintStream(System.out, true, StandardCharsets.UTF_8);
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Ingrese el primer numero : ");
+        pri.print("Ingrese el primer número : ");
         double num1 = entrada.nextDouble();
-        System.out.print("Ingrese el segundo numero : ");
+        pri.print("Ingrese el segundo número : ");
         double num2 = entrada.nextDouble();
 
-        System.out.println("El resultado de la multiplicacion es : " + multiplica(num1, num2));
+        pri.println("El resultado de la multiplicación es : " + multiplica(num1, num2));
     }
 
 }

@@ -1,4 +1,6 @@
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /*
@@ -25,10 +27,11 @@ public class Ejercicio_4 {
     }
 
     public static void main(String[] args) {
+         PrintStream pri = new PrintStream(System.out, true, StandardCharsets.UTF_8);
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Ingrese un numero : ");
+        pri.print("Ingrese un número : ");
         int num = entrada.nextInt();
-        System.out.println("El numero que ingreso es : " + dimeSigne(num));
+        pri.println("El número que ingreso es : " + dimeSigne(num));
     }
 
 }

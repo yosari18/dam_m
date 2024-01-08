@@ -17,7 +17,7 @@ public class Menu_arrays {
      */
     public static void main(String[] args) {
         /*
-        4) Nos piden crear una matriz de 4×4 de números enteros que inicialmente esta vacía, nos piden hacer un menú con estas opciones:
+        4) Nos piden crear una matriz de 3×3 de números enteros que inicialmente esta vacía, nos piden hacer un menú con estas opciones:
         Rellenar TODA la matriz de números, debes pedírselo al usuario. 
         Suma de una fila que se pedirá al usuario (controlar que elija una correcta)
         Suma de una columna que se pedirá al usuario (controlar que elija una correcta) 
@@ -27,7 +27,7 @@ public class Menu_arrays {
         IMPORTANTE: hasta que no se haga la primera opción, el resto de opciones no se deberán de ejecutar, simplemente mostrar un mensaje donde diga que debes rellenar la matriz.
          */
         Scanner entrada = new Scanner(System.in);
-        int[][] arr = new int[2][2];
+        int[][] arr = new int[3][3];
         int numfilas;
 
         int colum;
@@ -50,9 +50,7 @@ public class Menu_arrays {
                         for (int j = 0; j < arr[i].length; j++) {
                             System.out.print("Ingresar valor a la posicion (" + i + ") y (" + j + ") :");
                             arr[i][j] = entrada.nextInt();
-
                         }
-
                     }
 
                     break;
@@ -91,7 +89,6 @@ public class Menu_arrays {
                     int suma = 0;
                     int res = 0;
 
-                   
                     System.out.print("[");
                     for (int i = 0; i < arr.length; i++) {
 
@@ -99,10 +96,13 @@ public class Menu_arrays {
                             suma = suma + arr[i][j];
                             res = arr[i][j];//pasamos los valores  para ejecutar el array de columnas
                             break;
-
                         }
-                        System.out.print(res + ", ");
-
+                        
+                        System.out.print(res );
+                        if(i<arr.length-1){//comillas
+                            System.out.print(", ");
+                        
+                        }
                     }
                     System.out.print("]");
                     System.out.println("=" + suma);
@@ -111,43 +111,44 @@ public class Menu_arrays {
                 case "d":
                     int sum = 0;
                     int arr2;
-                     System.out.print("[");
+                    System.out.print("[");
                     for (int i = 0; i < arr.length; i++) {
-                       
+
                         for (int j = 0; j < arr.length; j++) {
                             if (Arrays.equals(arr[i], arr[j])) {//Comparamos si las posiciones son iguales
                                 sum = sum + arr[i][j];
                                 arr2 = arr[i][j];//Pasamos los valores para ejecutar
-                                System.out.print(arr2+", ");
+                                System.out.print(arr2);
+                                if (i < arr.length - 1) {//para las comas
+                                    System.out.print(", ");
 
+                                }
                             }
-                            
-
                         }
-                       
 
                     }
-                     System.out.print("]");
-                    System.out.println("= "+sum);
+                    System.out.print("]");
+                    System.out.println("= " + sum);
 
                     break;
                 case "e":
-                    int sumadig=0;
-                    int resul;
-                    System.out.print("[");
-                    for (int i = 0; i < arr.length; i++) {
-                        for (int j = arr.length; j < arr[i].length+1; j--) {
-                           sumadig=sumadig+arr[i][j];
-                          // resul=arr[i][j];
-                           // System.out.println(resul);
-                           /*resul=arr[i][j];*/
-                          break;
+                    int sumadig = 0;
+                    boolean cum = true;
+                    System.out.print("[ ");
+                    for (int i = 2; i >= 0; i--) {//fila
+                        for (int j = 0; j <= i; j++) {//columnas
+                            if (cum) {
+                                sumadig = arr[i][j] + arr[1][1] + arr[0][2];
+                                System.out.print(arr[i][j] + ", " + arr[1][1] + ", " + arr[0][2] + "] = " + sumadig);
+
+                                cum = false;
+
+                            }
                         }
-                        
                     }
-                    System.out.println("= "+sumadig);
 
                     break;
+
                 case "f":
                     int sumMedia = 0;
 
@@ -162,7 +163,7 @@ public class Menu_arrays {
                     break;
 
                 default:
-                    System.out.println("sdg");
+                    System.out.println("***Introducir letras de las opciones que existe***");
             }
             entrada.nextLine();
         } while (true);

@@ -1,4 +1,6 @@
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /*
@@ -17,11 +19,11 @@ public class Ejercicio_5 {
     }
 
     public static void main(String[] args) {
-
+        PrintStream pri = new PrintStream(System.out, true, StandardCharsets.UTF_8);
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce cantidad de millas : ");
         int millas = entrada.nextInt();
-        System.out.println("En kilometros es : " + milles_a_quilometres(millas));
+        pri.println("En kilómetros es : " + milles_a_quilometres(millas));
 
     }
 

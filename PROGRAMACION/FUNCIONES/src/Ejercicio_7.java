@@ -12,7 +12,8 @@ import java.util.Scanner;
 public class Ejercicio_7 {
 
     public static double perimetreRectangle(double ancho, double alto) {
-        return ancho + ancho + alto + alto;
+        int perim=(int) ((ancho*2)+(alto*2));
+        return perim;
     }
 
     public static double areaRectangle(double ancho, double alto) {
@@ -21,9 +22,9 @@ public class Ejercicio_7 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Introducir ancho :");
+        System.out.print("Introducir ancho :");
         double ancho = entrada.nextDouble();
-        System.out.println("Introduce alto :");
+        System.out.print("Introduce alto :");
         double alto = entrada.nextDouble();
 
         System.out.println("El area del rectangulo es :" + areaRectangle(ancho, alto));

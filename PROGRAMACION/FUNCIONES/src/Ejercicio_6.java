@@ -23,12 +23,10 @@ public class Ejercicio_6 {
             System.out.print("Introduce precio #" + (i + 1) + " :");
             precios[i] = entrada.nextDouble();
         }
-        for(double precio: precios){
-        System.out.printf("El precio total %.2f con IVA %.2f%n", precio,  preuAmbIVA(precio));
-           
-        
+        for (double precio : precios) {
+            System.out.printf("El precio total %.2f con IVA %.2f%n", precio, preuAmbIVA(precio));
+
         }
-       
 
     }
 
