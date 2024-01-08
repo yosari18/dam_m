@@ -15,9 +15,9 @@ public class Ejercicio_1 {
 
     public static double multiplica(double a, double b) {
 
-        double resultado = a * b;
+        
 
-        return resultado;
+        return a*b;
     }
 
     public static void main(String[] args) {
