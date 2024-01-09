@@ -27,10 +27,11 @@ public class calcula {
 
         calculadora myCalc = new calculadora();
 
-        System.out.println("La suma entre " + operand1 + " y " + operand2 + " es " + myCalc.suma(operand1, operand2));
-        System.out.println("La resta entre " + operand1 + " y " + operand2 + " es " + myCalc.resta(operand1, operand2));
-        System.out.println("La division entre " + operand1 + " y " + operand2 + " es " + myCalc.division(operand1, operand2));
-        System.out.println("La multiplicacion  entre " + operand1 + " y " + operand2 + " es " + myCalc.multipliuca(operand1, operand2));
+        System.out.println("La suma entre " + operand1 + " y " + operand2 + " es  :" + myCalc.suma(operand1, operand2));
+        System.out.println("La resta entre " + operand1 + " y " + operand2 + " es  :" + myCalc.resta(operand1, operand2));
+        System.out.println("La division entre " + operand1 + " y " + operand2 + " es  :" + myCalc.division(operand1, operand2));
+        System.out.println("La multiplicacion  entre " + operand1 + " y " + operand2 + " es  :" + myCalc.multipliuca(operand1, operand2));
+        System.out.println(  operand1 + " es mayor que " + operand2 + "   :" + myCalc.MayorQue(operand1, operand2));
         System.out.println("Ultima operacionj realizada : " + myCalc.getLastOp() + "; ultimo resultado " + myCalc.getLastResult());
     }
 
