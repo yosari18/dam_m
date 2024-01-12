@@ -15,8 +15,8 @@ public class Ejercicio_11 {
     public static void tabla(int num) {
         int resultado;
         for (int i = 1; i <= 12; i++) {
-            resultado=num*i;
-             System.out.printf("%d X %d = %d %n",num,i,resultado);
+            
+             System.out.printf("%d X %d = %d %n",num,i,num*i);
             
         }
 
