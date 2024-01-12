@@ -13,7 +13,7 @@ public class Ejercicio_10 {
 
     public static boolean fechaCorrecta(int dia, int mes, int anio) {
         boolean resultado=true;
-        if(dia>=1 && dia<=30 && mes>=1 && anio>=1){
+        if(dia>=1 && dia<=30 && mes>=1&& mes<=12 && anio>=1){
            return resultado;
         
         }
@@ -31,7 +31,8 @@ public class Ejercicio_10 {
         System.out.print("Dime el año :");
         int anio = entrada.nextInt();
         
-        System.out.println("Los datos que ingreso es : "+fechaCorrecta(dia, mes, anio)+ "  ( "+dia);
+        System.out.println("Los datos que ingreso es : "+fechaCorrecta(dia, mes, anio));
+        System.out.printf("%d/%d/%d%n ", dia, mes, anio);
     }
 
 }
