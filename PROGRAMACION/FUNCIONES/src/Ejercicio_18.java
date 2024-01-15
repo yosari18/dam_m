@@ -23,15 +23,15 @@ public class Ejercicio_18 {
      * 56321122 el NIF es ‘X’.
      */
     private static char NIF(int dni) {
-       char[] letrasNIF = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
-        int resto = dni % 23;// Calcular el resto 
-        return letrasNIF [resto];
+        char[] letrasNIF = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        return letrasNIF[dni % 23]; // Calcular el resto
     }
- public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el numero de DNI: ");
         int dni = scanner.nextInt();
-        System.out.println(dni+"" +NIF(dni));
+        System.out.println(dni + "" + NIF(dni));
 
     }
 }
