@@ -17,12 +17,12 @@ public class Ejercicio_16 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Dame un numero para contar los multiplos: ");
+        System.out.println("Dame un numero : ");
         int n = entrada.nextInt();
         boolean esprimo = true;
-        int contador=n-1;
-       
-        while ( contador >1) {
+        int contador = n - 1;
+
+        while (contador > 1) {
             if (n % contador == 0) {
                 esprimo = false;
             }
