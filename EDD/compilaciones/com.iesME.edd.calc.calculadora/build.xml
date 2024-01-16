@@ -10,6 +10,18 @@
 <project name="com.iesME.edd.calc.calculadora" default="default" basedir=".">
     <description>Builds, tests, and runs the project com.iesME.edd.calc.calculadora.</description>
     <import file="nbproject/build-impl.xml"/>
+
+    <target name ="clean">
+        <delete dir="clases"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir ="clases"/>
+        <javac includeantruntime="false"
+               srcdir="src/com/iesme/edd/calc/
+               calculadora" destdir="clases"
+               />
+        </target>
     <!--
 
     There exist several targets which are by default empty and which can be 
