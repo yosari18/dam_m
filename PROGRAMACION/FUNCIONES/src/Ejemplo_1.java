@@ -9,7 +9,7 @@
  */
 public class Ejemplo_1 {
 
-    public static void imprimeHolaMundo() {
+   /* public static void imprimeHolaMundo() {
         System.out.println("Hola mundo ");
     }
 
@@ -22,13 +22,18 @@ public class Ejemplo_1 {
     public static int multiplica(int a, int b) {
         int resultado = a * b;
         return resultado;
-    }
+    }*/
 
     public static void main(String[] args) {
 
-        imprimeHolaMundo();
+        /*imprimeHolaMundo();
         System.out.println("El resultado de 4 * 6 es : " + multiplica(4, 6));
-        System.out.println("El doble de 50 es :" + doble(50));
+        System.out.println("El doble de 50 es :" + doble(50));*/
+        int num=-525445;
+        int resultado=num%10;
+        System.out.println(resultado);
+       
+       
 
     }
 

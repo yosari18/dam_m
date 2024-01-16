@@ -19,7 +19,7 @@
         <mkdir dir ="clases"/>
         <javac includeantruntime="false"
                srcdir="src/com/iesme/edd/calc/
-               calculadora" destdir="clases"
+                   calculadora" destdir="clases"
                />
         </target>
     <!--
