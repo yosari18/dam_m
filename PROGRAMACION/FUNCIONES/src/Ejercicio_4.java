@@ -13,25 +13,38 @@ import java.util.Scanner;
  */
 public class Ejercicio_4 {
 
-    public static String dimeSigne(int a) {
-       String resultado = "negativo";
-       String resultado2 = "cero";
-       String resultado3 = "positivo";
-        if (a < 0) {
-            return resultado;
-        } else if (a == 0) {
-            return resultado2;
+    public static int dimeSigne(int a) {
+        if (a > 0) {
+            return 1;
+        } else if (a < 0) {
+            return 2;
         } else {
-            return resultado3;
+            return 3;
         }
     }
 
     public static void main(String[] args) {
-         PrintStream pri = new PrintStream(System.out, true, StandardCharsets.UTF_8);
+
         Scanner entrada = new Scanner(System.in);
-        pri.print("Ingrese un número : ");
+        System.out.println("Ingrese un número :");
         int num = entrada.nextInt();
-        pri.println("El número que ingreso es : " + dimeSigne(num));
+
+        switch (dimeSigne(num)) {
+            case 1:
+                System.out.println("positivo");
+
+                break;
+            case 2:
+                System.out.println("negativo");
+
+                break;
+            case 3:
+                System.out.println("zero");
+
+                break;
+            default:
+                throw new AssertionError();
+        }
     }
 
 }

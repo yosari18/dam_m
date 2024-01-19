@@ -93,6 +93,10 @@ PI: el número pi (3.141592653589793)
         int absoluto = Math.abs(num);
         System.out.println("El valor absoluto de " + num + " es: " + absoluto);
         
+        int min=3;
+        int max=5;
+        int resultadoo=(int) (Math.random()*(max-min+1)+min);
+        
         
     }
 

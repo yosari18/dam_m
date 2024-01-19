@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -13,38 +12,27 @@ import java.util.Scanner;
 public class Quadrat_magic {
 
     public static boolean comprovar(int[][] matriu) {
+        int sumaColumnas, sumaFila, sumaDiago1 = 0, sumaDiago2 = 0;
         boolean res = true;
-        int sumaColumnas;
-        int sumaFila;
-        int sumaDiago1;
-        int sumaDiago2;
         for (int i = 0; i < matriu.length; i++) {//fila
             sumaFila = 0;
             sumaColumnas = 0;
-            for (int j = 0; j < matriu[i].length; j++) {//columna
+            for (int j = 0; j < matriu.length; j++) {//columna
                 sumaFila += matriu[i][j];
                 sumaColumnas += matriu[j][i];
-
             }
-            if (sumaFila != sumaFila || sumaColumnas != sumaColumnas) {
+            if (sumaFila != sumaColumnas) {
                 res = false;
-
-            } else {
-                res = true;
             }
         }
-
         for (int i = 0; i < matriu.length; i++) {
-            sumaDiago1 = 0;
-                sumaDiago2 = 0;
-            for (int j = 0; j < matriu.length; j++) {
-                 if (Arrays.equals(matriu[i], matriu[j])) {//Comparamos si las posiciones son iguales
-                    sumaDiago1 += matriu[i][j];
-                }
-            }
+            sumaDiago1 += matriu[i][i];
+            sumaDiago2 += matriu[i][matriu.length - i - 1];
         }
-
-        return res;
+        if (sumaDiago1 != sumaDiago2) {
+            res = false;
+        }
+         return res;
     }
 
     public static void llegirmatriu(int[][] matriu) {
@@ -59,15 +47,18 @@ public class Quadrat_magic {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int matriz;
-        do {
-            System.out.print("Ingresa tamano de la matriz mayor que 2 :");
-            matriz = entrada.nextInt();
-        } while (matriz < 3);
-        int matriu[][] = new int[matriz][matriz];
+        System.out.print("Ingresar tamano de la matriz :");
+        int tama = entrada.nextInt();
+        while (tama < 3) {
+            System.out.println("***Error*** la matriz debe ser igual o mayor que 3 :");
+            tama = entrada.nextInt();
+        }
+        int matriu[][] = new int[tama][tama];
         llegirmatriu(matriu);
-        System.out.println(comprovar(matriu));
-
+        if (comprovar(matriu)) {
+            System.out.println("La matriz es magico");
+        } else {
+            System.out.println("La matriz no es magica");
+        }
     }
-
 }

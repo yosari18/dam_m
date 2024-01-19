@@ -9,25 +9,21 @@
  */
 public class Ejercicio_20 {
 
-    public static void tabla (int num){
-        
-        int prod=1;
+    public static void tabla(int num) {
+        int prod = 1;
         for (int i = 1; i <= 10; i++) {
-            for (int j = i; j <= 10; j++) {
-                prod=prod*;
-                System.out.printf(" %d x %d = %d %n", i,j,prod);
-                
+            for (int j = 1; j <= 10; j++) {
+                prod = i * j;
+                System.out.println(i + " x " + j + " = " + prod);
             }
             System.out.println("");
-            
         }
-    
     }
-    
+
     public static void main(String[] args) {
-        // TODO code application logic here
-        int num=1;
+        int num = 1;
         tabla(num);
+
     }
-    
+
 }
