@@ -17,8 +17,8 @@ public class Ejercicio_exam {
         }
 
     }*/
-    public static int digitos(int num) {
-        int resultado ;
+   // public static int digitos(int num) {
+      /*  int resultado ;
         for (int i = 0; i <10; i++) {
             resultado=num%10;
             if(resultado){
@@ -38,6 +38,6 @@ public class Ejercicio_exam {
 
         System.out.println(" El numero de digitos es :" + digitos(num));
 
-    }
+    }*/
 
 }

@@ -1,12 +1,12 @@
-
-import java.util.Scanner;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+package quadrat_magic;
+
+import java.util.Scanner;
+
 /**
- *
  * @author yosari
  */
 public class Quadrat_magic {
@@ -24,14 +24,13 @@ public class Quadrat_magic {
                     res = false;
                 }
             }
-
         }
         for (int i = 0; i < matriu.length; i++) {
             sumaDiago1 += matriu[i][i];
             sumaDiago2 += matriu[i][matriu.length - i - 1];
-        }
-        if (sumaDiago1 != sumaDiago2) {
-            res = false;
+            if (sumaDiago1 != sumaDiago2) {
+                res = false;
+            }
         }
         return res;
     }
