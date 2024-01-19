@@ -12,10 +12,8 @@ import java.util.Scanner;
 public class Ejercicio_9 {
 
     public static int valorElevado(int a, int b) {
-
         return Math.max(a, b);
         //return (a>b)? a:b; ? es un operadir ternario 
-
     }
 
     public static void main(String[] args) {
@@ -26,7 +24,6 @@ public class Ejercicio_9 {
         int b = entrada.nextInt();
         System.out.print("Ingrese el segundo valor :");
         int c = entrada.nextInt();
-
         System.out.println("El mayor es : " + valorElevado(valorElevado(a, b), c));
 
     }

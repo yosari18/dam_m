@@ -10,10 +10,10 @@ import java.util.Scanner;
  * @author yosari
  */
 public class Ejercicio_17 {
+
     /*
     
-    */
-
+     */
     public static boolean esPrimo(int num) {
         boolean esprimo = false;
         int contador = num - 1;
@@ -26,18 +26,20 @@ public class Ejercicio_17 {
             }
             contador--;
         }
-        return (esprimo == false) ? true : false;
+        return esprimo;
     }
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-
         int num;
         System.out.print("Dame un numero entero :");
         num = entrada.nextInt();
         while (num != 0) {
-
-            System.out.println("es primo : " + esPrimo(num));
+            if (esPrimo(num)) {
+                System.out.println("No esprimo");
+            } else {
+                System.out.println("Es primo");
+            }
             System.out.print("Dame un numero entero :");
             num = entrada.nextInt();
 

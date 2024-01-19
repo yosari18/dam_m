@@ -37,7 +37,7 @@ public class Ejercicio_21 {
     }
     
    public static double volumen(double r){
-       return 3/4*Math.PI*Math.pow(r, 3);
+      return (4.0 / 3.0) * Math.PI * Math.pow(r, 3);
    
    }
 

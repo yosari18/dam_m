@@ -1,7 +1,6 @@
 
-
-
 import java.util.Arrays;
+import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -20,9 +19,8 @@ public class MATRIX_3_3 {
         /*
         1) Crear una matriz de 3×3 con los números del 1 al 9. Mostrar por pantalla, tal como 
         aparece en la matriz.
-        */
+         */
 
-       
         int fila = 4;
         int columna = 5;
         int miarray[][] = new int[fila][columna];
@@ -50,6 +48,7 @@ public class MATRIX_3_3 {
             System.out.print(sumaColumna + "   ");
         }
         System.out.println("| " + sumaTotal);
+
     }
 
 }
