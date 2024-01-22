@@ -19,27 +19,27 @@ public class Quadrat_magic {
             sumaColumnas = 0;
             for (int j = 0; j < matriu.length; j++) {//columna
                 sumaFila += matriu[i][j];
-                sumaColumnas += matriu[j][i];
-            }
-            if (sumaFila != sumaColumnas) {
-                res = false;
+                sumaColumnas += matriu[j][i];//invertimos posiciones
+                if (sumaFila != sumaColumnas) {
+                    res = false;
+                }
             }
         }
         for (int i = 0; i < matriu.length; i++) {
             sumaDiago1 += matriu[i][i];
-            sumaDiago2 += matriu[i][matriu.length - i - 1];
+            sumaDiago2 += matriu[i][matriu.length - i - 1];//columna empieza con valor de 2
+            if (sumaDiago1 != sumaDiago2) {
+                res = false;
+            }
         }
-        if (sumaDiago1 != sumaDiago2) {
-            res = false;
-        }
-         return res;
+        return res;
     }
 
     public static void llegirmatriu(int[][] matriu) {
         Scanner entrada = new Scanner(System.in);
         for (int i = 0; i < matriu.length; i++) {
             for (int j = 0; j < matriu[i].length; j++) {
-                System.out.print("Ingresar posicion [" + i + "] [" + j + "] :");
+                System.out.print("Ingresar posición [" + i + "] [" + j + "] :");
                 matriu[i][j] = entrada.nextInt();
             }
         }
@@ -47,18 +47,15 @@ public class Quadrat_magic {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Ingresar tamano de la matriz :");
+        System.out.print("Ingresar tamaño de la matriz :");
         int tama = entrada.nextInt();
         while (tama < 3) {
-            System.out.println("***Error*** la matriz debe ser igual o mayor que 3 :");
+            System.out.print("***Error*** la matriz debe ser igual o mayor que 3 :");
             tama = entrada.nextInt();
         }
         int matriu[][] = new int[tama][tama];
         llegirmatriu(matriu);
-        if (comprovar(matriu)) {
-            System.out.println("La matriz es magico");
-        } else {
-            System.out.println("La matriz no es magica");
-        }
+        String r = comprovar(matriu) ? "La matriz es magico" : "La matriz no es magica";
+        System.out.println(r);
     }
 }
