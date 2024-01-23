@@ -80,6 +80,7 @@ public class hundir_flota {
                 llenarMatriz(matriz, '-');
                 mostrarMatriz('A', matriz);
                 System.out.print("Ingresar fila: ");
+                entrada.nextLine();
                 char fila = entrada.nextLine().toLowerCase().charAt(0);
                 System.out.print("Ingresar columna: ");
                 //int columna=entrada.nextInt();

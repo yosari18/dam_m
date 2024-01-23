@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -29,10 +32,9 @@ public class Ejemplo_1 {
         /*imprimeHolaMundo();
         System.out.println("El resultado de 4 * 6 es : " + multiplica(4, 6));
         System.out.println("El doble de 50 es :" + doble(50));*/
-        int num=-525445;
-        int resultado=num%10;
-        System.out.println(resultado);
-       
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("fila");
+       char fila=entrada.nextLine().toLowerCase().charAt(0);
        
 
     }
