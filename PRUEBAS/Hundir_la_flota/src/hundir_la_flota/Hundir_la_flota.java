@@ -37,12 +37,12 @@ public class Hundir_la_flota {
         int acorazado = 4;
         int portaaviones = 5;
         String p = "p";
-        int fila = (int) (Math.random() * arr.length);
+       /* int fila = (int) (Math.random() * arr.length);
         int columna = (int) (Math.random() * (arr[0].length - portaaviones + 1));
 
-        System.out.println(fila+ " "+columna);
-         for (int i = 0; i < arr.length; i++) {
-           
+        System.out.println(fila + " " + columna);
+*/
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(" - ");
             }
@@ -51,15 +51,19 @@ public class Hundir_la_flota {
 
     }
 
-    /* public static int disparo(int disparo) {
+    public static int barco_aleatorio(int min, int max) {
 
-    }*/
+        return (int) (Math.random() * (max - min + 1) + min);
+    }
+
     public static void mostrar_tablero() {
 
     }
 
     public static int menu_niveles() {
-
+        int[][] arr = new int[10][10];
+        char fila;
+        int columna;
         System.out.println("***MENÚ***");
         System.out.println("1)Fácil");
         System.out.println("2)Medio");
@@ -68,16 +72,7 @@ public class Hundir_la_flota {
         System.out.print("Elige: ");
         int menu = entrada.nextInt();
         entrada.nextLine();
-        return menu;
-
-    }
-
-    public static void main(String[] args) {
-        int[][] arr = new int[10][10];
-
-        char fila;
-        int columna;
-        switch (menu_niveles()) {
+        switch (menu) {
             case 1://nivel facil
                 crear_tablero(arr);
 
@@ -92,7 +87,6 @@ public class Hundir_la_flota {
                     columna = entrada.nextInt();
 
                 }
-                mostrar_tablero();
 
                 break;
             case 2:
@@ -111,6 +105,13 @@ public class Hundir_la_flota {
             default:
                 throw new AssertionError();
         }
+        return menu;
+
+    }
+
+    public static void main(String[] args) {
+
+        menu_niveles();
 
     }
 }
