@@ -30,6 +30,14 @@
             </java>
         </target>
 
+        <target name="jar">
+            <jar desfile="fichero.jar" basedir="clases">
+                <manifest>
+                       <attribute name="Main-Class" value="com.iesme.edd.calc.calculadora.calcula"/>
+                </manifest>
+            </jar>
+        </target>
+
  <!--
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 

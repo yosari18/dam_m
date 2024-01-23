@@ -19,19 +19,16 @@ public class Quadrat_magic {
             sumaColumnas = 0;
             for (int j = 0; j < matriu.length; j++) {//columna
                 sumaFila += matriu[i][j];
-<<<<<<< HEAD
+
                 sumaColumnas += matriu[j][i];
-=======
+
                 sumaColumnas += matriu[j][i];//invertimos posiciones
->>>>>>> 092b07ca22b400ff5e935df5da19d5d7278d5d80
+
                 if (sumaFila != sumaColumnas) {
                     res = false;
                 }
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> 092b07ca22b400ff5e935df5da19d5d7278d5d80
         }
         for (int i = 0; i < matriu.length; i++) {
             sumaDiago1 += matriu[i][i];
