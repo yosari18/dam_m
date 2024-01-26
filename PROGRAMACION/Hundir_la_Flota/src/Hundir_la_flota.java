@@ -4,6 +4,8 @@
  */
 
 
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -11,93 +13,86 @@ import java.util.Scanner;
  * @author yosari
  */
 public class Hundir_la_flota {
+static Scanner entrada = new Scanner(System.in);
 
-    static Scanner entrada = new Scanner(System.in);
-
-    public static int[][] crear_tablero(int[][] arr) {
-
-        char letra = 'A';
-        for (int i = 0; i < arr.length; i++) {
+    public static void llenarMatriz(char[][] matriz, char caracter) {
+        for (int i = 0; i < matriz.length; i++) {
             System.out.printf("%3s", i);
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = caracter;
+            }
         }
         System.out.println("");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(letra++);
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(" - ");
-            }
-            System.out.println("");
+    }
+
+    public static void porVertical(char[][] matriz, char letra, int cantidad) {
+        int fila = (int) (Math.random() * 6);
+        int column = (int) (Math.random() * matriz.length);
+        for (int i = 0; i < cantidad; i++) {
+            matriz[i + fila][column] = letra;
+
         }
-        return arr;
     }
 
-    public static void insertar_barco(int[][] arr) {
-        int lancha = 1;
-        int barco = 3;
-        int acorazado = 4;
-        int portaaviones = 5;
-        String p = "p";
-       /* int fila = (int) (Math.random() * arr.length);
-        int columna = (int) (Math.random() * (arr[0].length - portaaviones + 1));
+    public static void acoHorizontal(char[][] matriz, char letra, int cantidad) {
 
-        System.out.println(fila + " " + columna);
-*/
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(" - ");
-            }
-            System.out.println("");
+        int fila = (int) (Math.random() * matriz.length);
+        int column = (int) (Math.random() * 6);
+        for (int j = 0; j < cantidad; j++) {
+            matriz[fila][j + column] = letra;
         }
-
     }
 
-    public static int barco_aleatorio(int min, int max) {
+    public static void barcHorizontal(char[][] matriz, char letra, int cantidad) {
 
-        return (int) (Math.random() * (max - min + 1) + min);
+        for (int j = 0; j < cantidad; j++) {
+            int fila = (int) (Math.random() * matriz.length);
+            int column = (int) (Math.random() * 6);
+            for (int i = 0; i <= cantidad; i++) {
+
+                matriz[fila][j + column] = letra;
+            }
+        }
     }
 
-    public static void mostrar_tablero() {
+    public static void lancHorizontal(char[][] matriz, char letra) {
 
+        for (int j = 0; j < 5; j++) {
+            matriz[aleatorio()][aleatorio()] = letra;
+        }
     }
 
-    public static int menu_niveles() {
-        int[][] arr = new int[10][10];
-        char fila;
-        int columna;
-        System.out.println("***MENÚ***");
+    public static int aleatorio() {
+        // int fila = (int) (Math.random() * 6);
+        return (int) (Math.random() * 10);
+    }
+
+    public static int menu() {
+        char[][] matriz = new char[10][10];
+        System.out.println("**MENÙ**");
         System.out.println("1)Fácil");
         System.out.println("2)Medio");
         System.out.println("3)Difícil");
         System.out.println("4)Personalizado");
         System.out.print("Elige: ");
         int menu = entrada.nextInt();
-        entrada.nextLine();
         switch (menu) {
-            case 1://nivel facil
-                crear_tablero(arr);
-
-                System.out.print("Ingresar fila :");
-                fila = entrada.nextLine().charAt(0);
-                System.out.print("Ingresar Columna :");
-                columna = entrada.nextInt();
-
-                while (columna > arr.length || columna < 0) {//Entra si columna esta fuera de limite
-                    System.out.println("**Error fuera de rango**");
-                    System.out.print("Ingresar Columna :");
-                    columna = entrada.nextInt();
-
-                }
+            case 1:
+                llenarMatriz(matriz, '-');
+                mostrarMatriz('A', matriz);
+                System.out.print("Ingresar fila: ");
+                entrada.nextLine();
+                char fila = entrada.nextLine().toLowerCase().charAt(0);
+                System.out.print("Ingresar columna: ");
+                //int columna=entrada.nextInt();
 
                 break;
             case 2:
 
-                insertar_barco(arr);
                 break;
-
             case 3:
 
                 break;
-
             case 4:
 
                 break;
@@ -105,13 +100,41 @@ public class Hundir_la_flota {
             default:
                 throw new AssertionError();
         }
+
         return menu;
+    }
+
+    public static void mostrarMatriz(char letra, char[][] matriz) {
+
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print(letra++);
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(" " + matriz[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+        System.out.println("");
+    }
+
+    public static void jugador(char[][] matriz) {
+        // llenarMatriz(matriz, '-');
+        //lancHorizontal(matriz, 'L', 5);
 
     }
 
     public static void main(String[] args) {
+        char[][] matriz = new char[10][10];
+        menu();
 
-        menu_niveles();
-
+        // Llenar la matriz con '-'
+        // llenarMatriz(matriz, '-');
+        // porVertical(matriz, 'P', 5);
+        //acoHorizontal(matriz, 'Z', 4);
+        //barcHorizontal(matriz, 'B', 3);
+        //lancHorizontal(matriz, 'L');
+        // mostrarMatriz('A', matriz);
+        //jugador (matriz);
     }
+
 }

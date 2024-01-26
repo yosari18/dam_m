@@ -1,5 +1,4 @@
 
-//import static Hundir_la_flota.entrada;
 import java.util.Scanner;
 
 /*
@@ -10,9 +9,8 @@ import java.util.Scanner;
  *
  * @author yosari
  */
-public class hundir_flota {
-
-    static Scanner entrada = new Scanner(System.in);
+public class flota {
+ static Scanner entrada = new Scanner(System.in);
 
     public static void llenarMatriz(char[][] matriz, char caracter) {
         for (int i = 0; i < matriz.length; i++) {
@@ -47,13 +45,13 @@ public class hundir_flota {
         }
     }
 
-    public static void disparos(char[][] matriz, char[][] matrizOculta, char fila, int columna, int tiros) {
+    public static void disparos(char[][] matriz, char[][] matrizOculta, char fila, int columna) {
         try {
-
-              llenarMatriz(matrizOculta, '-'); // Llena la matriz oculta con guiones
-             lancHorizontal(matriz, 'L'); // Llama a lancHorizontal una vez al principio del juego
-             mostrarMatriz('A', matrizOculta);
-          
+            int tiros = 3;
+            //   llenarMatriz(matrizOculta, '-'); // Llena la matriz oculta con guiones
+            // lancHorizontal(matriz, 'L'); // Llama a lancHorizontal una vez al principio del juego
+            // mostrarMatriz('A', matrizOculta);
+            insertar(matriz, matrizOculta);
             while (tiros > 0) {
 
                 System.out.print("Ingresar fila: ");
@@ -87,9 +85,8 @@ public class hundir_flota {
         mostrarMatriz('A', matrizOculta);
     }
 
-    public static void insertar(char[][] matriz, char[][] matrizOculta, int tiros) {
-       
-        
+    public static void insertar(char[][] matriz, char[][] matrizOculta) {
+
         llenarMatriz(matrizOculta, '-'); // Llena la matriz oculta con guiones
         lancHorizontal(matriz, 'L'); // Llama a lancHorizontal una vez al principio del juego
         mostrarMatriz('A', matrizOculta);
@@ -103,8 +100,6 @@ public class hundir_flota {
     public static int menu(char[][] matriz, char[][] matrizOculta, char fila, int columna) {
         int opcion = 0;
         boolean salir = true;
-         boolean reiniciar_juego = true;
-
         try {
             System.out.println("    ///////////////////// \n   ///   HUNDIR      /// \n  ///      LA       /// \n ///     FLOTA     ///\n/////////////////////");
             do {
@@ -118,9 +113,7 @@ public class hundir_flota {
                 opcion = entrada.nextInt();
                 switch (opcion) {
                     case 1:
-                        int tiros = 3;
-                        
-                        disparos(matriz, matrizOculta, fila, columna, tiros);
+                        disparos(matriz, matrizOculta, fila, columna);
                         break;
                     case 2:
                         System.out.println("hola 2");

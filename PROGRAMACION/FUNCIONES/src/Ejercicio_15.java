@@ -13,15 +13,14 @@ public class Ejercicio_15 {
         int sumat = 0;
         for (int i = 1; i < arr.length+1; i++) {
             sumat = sumat + i;
-
+           
         }
         return sumat;
     }
 
     public static double media(int arr[]) {
-        
-        double media = suma(arr) / arr.length;
-        return media;//media tiene que se 50,5
+        return   suma(arr) / arr.length;
+       //media tiene que se 50,5
     }
 
     public static void main(String[] args) {
