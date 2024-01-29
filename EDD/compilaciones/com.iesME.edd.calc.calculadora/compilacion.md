@@ -18,3 +18,20 @@
 ![Alt text](3.png)
 <p>Sube también el código generado a la tarea
 </p>
+
+
+<p>A partir del proyecto “Calculadora” en Ant, ejecuta los comandos en Ant de “Clean”, “Compile”, “Run” y “Jar”
+<p>
+
+* Ant compile y clean
+![Alt text](antCompile.png)
+* Ant run
+![Alt text](antRun.jpeg)
+
+<p>Modifica el comando jar:
+
+* Al ejecutarlo realice antes “compile”
+* El archivo compilado lo guarde en una carpeta “Jar”
+
+
+<p>
