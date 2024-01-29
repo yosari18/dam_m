@@ -17,7 +17,7 @@
 
     <target name="compile" depends="clean">
         <mkdir dir ="clases"/>
-        <javac includeantruntime="false"
+        <javac includeAntRuntime="false"
                srcdir="src/com/iesme/edd/calc/calculadora" destdir="clases"
                />
         </target>
