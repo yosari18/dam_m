@@ -7,38 +7,11 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="com.iesME.edd.calc.calculadora" default="default" basedir=".">
-    <description>Builds, tests, and runs the project com.iesME.edd.calc.calculadora.</description>
+<project name="MesclaArrays" default="default" basedir=".">
+    <description>Builds, tests, and runs the project MesclaArrays.</description>
     <import file="nbproject/build-impl.xml"/>
+    <!--
 
-    <target name ="clean">
-        <delete dir="clases"/>
-    </target>
-
-    <target name="compile" depends="clean">
-        <mkdir dir ="clases"/>
-        <javac includeantruntime="false"
-               srcdir="src/com/iesme/edd/calc/calculadora" destdir="clases"
-               />
-        </target>
-
-        <target name="run" depends="compile">
-            <java classpath="clases" classname="com.iesme.edd.calc.calculadora.calcula">
-                <arg value="${arg0}"/>
-                <arg value="${arg1}"/>
-
-            </java>
-        </target>
-
-        <target name="jar">
-            <jar destfile="fichero.jar" basedir="clases">
-                <manifest>
-                       <attribute name="Main-Class" value="com.iesme.edd.calc.calculadora.calcula"/>
-                </manifest>
-            </jar>
-        </target>
-
- <!--
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 
     before and after some main targets. They are: 
@@ -85,7 +58,7 @@
 
     An example of overriding the target for project execution could look like this:
 
-        <target name="run" depends="com.iesME.edd.calc.calculadora-impl.jar">
+        <target name="run" depends="MesclaArrays-impl.jar">
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>
