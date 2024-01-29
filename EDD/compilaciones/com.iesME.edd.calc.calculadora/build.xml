@@ -17,7 +17,7 @@
 
     <target name="compile" depends="clean">
         <mkdir dir ="clases"/>
-        <javac includeAntRuntime="false"
+        <javac includeantruntime="false"
                srcdir="src/com/iesme/edd/calc/calculadora" destdir="clases"
                />
         </target>
@@ -31,7 +31,8 @@
         </target>
 
         <target name="jar">
-            <jar destfile="fichero.jar" basedir="clases">
+            <mkdir dir="Jar"/>
+            <jar destfile="Jar/fichero.jar" basedir="clases">
                 <manifest>
                        <attribute name="Main-Class" value="com.iesme.edd.calc.calculadora.calcula"/>
                 </manifest>

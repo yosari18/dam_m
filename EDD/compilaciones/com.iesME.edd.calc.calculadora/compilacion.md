@@ -30,8 +30,15 @@
 
 <p>Modifica el comando jar:
 
+
 * Al ejecutarlo realice antes “compile”
+
+![Alt text](antCompile.png)
+![Alt text](ficJAr.png)
+![Alt text](javaJAr.png)
+
 * El archivo compilado lo guarde en una carpeta “Jar”
 
-
+![Alt text](carpetajar.png)
+![Alt text](jarjar.png)
 <p>
