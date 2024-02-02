@@ -11,16 +11,24 @@ import java.util.Scanner;
  * @author yosari
  */
 public class Ejemplo {
-  Scanner entrada=new Scanner (System.in);
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
-        Persona p1=new Persona();
+
+        Persona thomas = new Persona();
+        thomas.edad = 84;
+        thomas.nombre = "Thomas Alva";
+        System.out.println(thomas.nombre + " va morir a la edad de " + thomas.edad + " anys");
         
-        System.out.println("nom :");
+        Persona pp=new Persona();
+        pp.edad = 24;
+        pp.nombre = "yosari Alva";
+        System.out.println(pp.nombre + " va morir a la edad de " + pp.edad + " anys");
+        
+
     }
-    
+
 }
