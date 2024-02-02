@@ -12,24 +12,24 @@ import java.util.Scanner;
  */
 public class Ejercicio_A2 {
 
-   static Scanner entrada=new Scanner(System.in);
+    static Scanner entrada = new Scanner(System.in);
+
     public static void main(String[] args) {
-       
-        
+
         Persona p1 = new Persona();
         System.out.print("Nombre :");
-        p1.nombre=entrada.nextLine();
+        p1.nombre = entrada.nextLine();
         System.out.print("Apellido :");
-        p1.apellido=entrada.nextLine();
+        p1.apellido = entrada.nextLine();
+        System.out.print("DNI :");
+        p1.DNI = entrada.nextLine();
         System.out.print("Edad :");
-        p1.edad=entrada.nextInt();
-        System.out.print("DNI");
-        p1.DNI=entrada.nextLine();
-        
-         System.out.println(p1.nombre + " " + p1.apellido +" "+p1.DNI+ ""+p1.DNI);
-        
-        //Persona p1=new Persona();
-       
+        p1.edad = entrada.nextInt();
+        if (p1.edad < 18) {
+            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "Es menor de edad");
+        } else {
+            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "Es mayor de edad");
+        }
     }
-    
+
 }
