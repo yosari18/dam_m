@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class personalizado {
 
-    static Scanner entrada = new Scanner(System.in);
+   static Scanner entrada = new Scanner(System.in);
 
     public static void llenarMatriz(char[][] matriz, char caracter) {
         for (int i = 0; i < matriz.length; i++) {
@@ -60,34 +60,31 @@ public class personalizado {
         return true; // No hay colisión, el espacio está vacío
     }
 
-    public static void colocarBarcos(char[][] matriz, char letra, int longitud, int cantidad, boolean vertical) {
+    public static void colocarBarco(char[][] matriz, char letra, int longitud, int cantidad, boolean vertical) {
         int barcosColocados = 0;
 
         while (barcosColocados < cantidad) {
             int fila, columna;
-            int intentos = 0;
 
-            while (intentos < 100) {  // Límite de intentos para evitar bucles infinitos
+            do {
                 fila = aleatorio(matriz.length);
-                columna = aleatorio(matriz[0].length);
+                System.out.println("fila " + fila);
+                columna = aleatorio(matriz[0].length );
+                System.out.println("columna " + columna);
+            } while (!verificarEspacio(matriz, fila, columna, longitud, vertical));
 
-                if (verificarEspacio(matriz, fila, columna, longitud, vertical)) {
-                    if (vertical) {
-                        for (int i = fila; i < fila + longitud; i++) {
-                            matriz[i][columna] = letra;
-                        }
-                    } else {
-                        for (int i = columna; i < columna + longitud; i++) {
-                            matriz[fila][i] = letra;
-                        }
-                    }
-                    barcosColocados += longitud;  // Incrementar por la cantidad de barcos colocados
-                    break;  // Sale del bucle si el barco se coloca correctamente
+            if (vertical && letra=='P') {
+                for (int i = fila; i < fila + longitud; i++) {
+                    matriz[i][columna] = letra;
+                    System.out.println("ee");
                 }
-
-                intentos++;
+            } else {
+                for (int i = columna; i < columna + longitud; i++) {
+                    matriz[fila][i] = letra;
+                    System.out.println("tt");
+                }
             }
-
+            barcosColocados++;
         }
     }
 
@@ -128,11 +125,6 @@ public class personalizado {
         mostrarResultado(matriz);
     }
 
-    public static void mostrarResultado(char[][] matriz) {
-        System.out.println("Resultado final:");
-        mostrarMatriz('A', matriz);
-    }
-
     public static void tocado_agua(char fila, int columna, char[][] matriz, char[][] matrizOculta) {
         if (matriz[fila - 'A'][columna] == 'L' || matriz[fila - 'A'][columna] == 'P' || matriz[fila - 'A'][columna] == 'B' || matriz[fila - 'A'][columna] == 'Z') {
             matrizOculta[fila - 'A'][columna] = 'X'; // Marca con X si toca
@@ -144,21 +136,42 @@ public class personalizado {
         mostrarMatriz('A', matrizOculta);
     }
 
+    public static void mostrarResultado(char[][] matriz) {
+        System.out.println("Resultado final:");
+        mostrarMatriz('A', matriz);
+    }
+
     public static int menu(char[][] matriz, char[][] matrizOculta, int elegir) {
         int tiros;
         switch (elegir) {
             case 1:
-
+                tiros = 2;
+                llenarMatriz(matriz, '-');
+                llenarMatriz(matrizOculta, '-');
+               colocarBarco(matriz, 'L', 1, 5, true);
+                colocarBarco(matriz, 'P', 5, 1, true);  // P se coloca siempre de manera vertical
+                colocarBarco(matriz, 'B', 3, 3, false);
+                colocarBarco(matriz, 'Z', 4, 1, false);
+                mostrarMatriz('A', matrizOculta);
+                disparo(matriz, matrizOculta, tiros);
                 break;
             case 2:
-
+                tiros = 3;
+                llenarMatriz(matriz, '-');
+                llenarMatriz(matrizOculta, '-');
+                colocarBarco(matriz, 'P', 5, 1, true);  // P se coloca siempre de manera vertical
+                colocarBarco(matriz, 'B', 3, 1, false);
+                colocarBarco(matriz, 'Z', 4, 1, false);
+                lancha(matriz, 'L', 2);
+                mostrarMatriz('A', matrizOculta);
+                disparo(matriz, matrizOculta, tiros);
                 break;
             case 3:
                 tiros = 2;
                 llenarMatriz(matriz, '-');
                 llenarMatriz(matrizOculta, '-');
-                colocarBarcos(matriz, 'L', 1, 1, false); // L se coloca en diferentes posiciones
-                colocarBarcos(matriz, 'B', 3, 1, false);
+                colocarBarco(matriz, 'L', 1, 1, false); // L se coloca en diferentes posiciones
+                colocarBarco(matriz, 'B', 3, 1, false);
                 mostrarMatriz('A', matrizOculta);
                 disparo(matriz, matrizOculta, tiros);
                 break;
@@ -171,18 +184,22 @@ public class personalizado {
         return elegir;
     }
 
+    public static void insertarTabla_Personalizado() {
+
+    }
+
     public static void personalizado() {
-        System.out.print("Introducir tamaño de fila (máximo 26)  : ");
+        System.out.print("Introducir tamano de fila (maximo 26)  : ");
         int filasPers = entrada.nextInt();
-        System.out.print("Introducir tamaño de columna (máximo 56): ");
+        System.out.print("Introducir tamano de columna(maximo 56): ");
         int columnasPers = entrada.nextInt();
         System.out.print("Introducir cantidad de lanchas (L)     : ");
         int lanchas = entrada.nextInt();
         System.out.print("Introducir cantidad de barcos (BBB)    : ");
         int barcos = entrada.nextInt();
-        System.out.print("Introducir cantidad de acorazado (ZZZZ) : ");
+        System.out.print("Introducir cantidad de acorazado(ZZZZ) : ");
         int acorazado = entrada.nextInt();
-        System.out.print("Cantidad de portaaviones (PPPPP)       : ");
+        System.out.print("cantidad de portaaviones (PPPPP)       : ");
         int portaaviones = entrada.nextInt();
         System.out.print("Cantidad de tiros                      : ");
         int tiros = entrada.nextInt();
@@ -192,13 +209,15 @@ public class personalizado {
 
         llenarMatriz(matriz, '-');
         llenarMatriz(matrizOculta, '-');
-        lancha(matriz, 'L', lanchas);
-        colocarBarcos(matriz, 'P', 5, portaaviones, true);
-        colocarBarcos(matriz, 'B', 3, barcos, false);
-        colocarBarcos(matriz, 'Z', 4, acorazado, false);
+        //lancha(matriz, 'L', lanchas);
+        //colocarBarco(matriz, 'B', 3, barcos, false);
+       // colocarBarco(matriz, 'Z', 4, acorazado, false);
+        colocarBarco(matriz, 'P', 5, portaaviones, true); //               PROBLEMAAAAAA
 
         mostrarMatriz('A', matrizOculta);
+
         disparo(matriz, matrizOculta, tiros);
+
     }
 
     public static void elegirNivel() {
@@ -211,16 +230,21 @@ public class personalizado {
             System.out.println("2)Medio");
             System.out.println("3)Dificil");
             System.out.println("4)Personalizado");
-System.out.print("Elige: ");
+
+            System.out.print("Elige: ");
             int elegir = entrada.nextInt();
             menu(matriz, matrizOculta, elegir);
         } catch (InputMismatchException e) {
             System.out.println("**ERROR** Entrada no válida. Debes ingresar un número.");
             entrada.nextLine(); // Limpia el buffer del scanner
         }
+
     }
 
     public static void main(String[] args) {
         elegirNivel();
+        // char[][] matriz = new char[5][5];
+        // colocarBarco(matriz, 'P', 5, 3, false);
+
     }
 }

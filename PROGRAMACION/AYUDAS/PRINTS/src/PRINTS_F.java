@@ -43,14 +43,13 @@ public class PRINTS_F {
         System.out.printf("%+10.2f %n", num1); // el simbolo + se puede quitar si asi lo quieres 
         System.out.printf("%010.2f %n", num1);// En lugar de espacios imprime 0
 
-        
         //Mostrar la cadena "Total:" con un ancho de 10 caracteres y alineada a la izquierda:
         System.out.printf("%-10s %n", "Total:");// izquierda
         System.out.printf("%10s %n", "Total  :");//derecha
-        
+
         //RESIDUO
-        int cal =56321122;
-        int res=cal%23;
+        int cal = 56321122;
+        int res = cal % 23;
         System.out.println(res);
 
     }
