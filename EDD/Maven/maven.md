@@ -2,6 +2,8 @@
 
 :heavy_check_mark: Haz capturas de imágenes en el que muestres el uso de mvn compile, mvn clean, mvn package y la ejecución de “myhelloMVN”
 ![Alt text](archivo1.png)
+
+* En el archivo pom.xml se agregó la linea llamada (<b>properties</b>)
 ![Alt text](pom1.png)
 <b>  maven compile</b>
 
@@ -30,8 +32,16 @@
  ![Alt text](MVNcompile.png)
 
 
-![Alt text](tree2.png)
+
 
 ![Alt text](mvnclean2.png)
 
+* Empaquetamos el proyecto en un formato específico. 
 ![Alt text](mvnpackage2.png)
+
+
+
+![alt text](tree2.png)
+
+* Después de hacer el comando tree. Seguimos la ruta para compilar.
+![alt text](javaejercicio2.png)
