@@ -14,5 +14,12 @@ public class Persona {
     String nombre;
     String apellido;
     int edad;
+    public Persona(String DNI, String nombre, String apellido, int edad){
+        this.DNI=DNI;
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.edad=edad;
+    
+    }
 
 }

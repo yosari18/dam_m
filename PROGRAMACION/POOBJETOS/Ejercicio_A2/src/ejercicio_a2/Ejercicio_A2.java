@@ -16,19 +16,37 @@ public class Ejercicio_A2 {
 
     public static void main(String[] args) {
 
-        Persona p1 = new Persona();
         System.out.print("Nombre :");
-        p1.nombre = entrada.nextLine();
+        String nombre = entrada.nextLine();
         System.out.print("Apellido :");
-        p1.apellido = entrada.nextLine();
+        String apellido = entrada.nextLine();
         System.out.print("DNI :");
-        p1.DNI = entrada.nextLine();
+        String DNI = entrada.nextLine();
         System.out.print("Edad :");
-        p1.edad = entrada.nextInt();
+        int edad = entrada.nextInt();
+        Persona p1 = new Persona(DNI, nombre, apellido, edad);
+        
+        
+        entrada.nextLine();
+        System.out.print("Nombre :");
+        nombre = entrada.nextLine();
+        System.out.print("Apellido :");
+        apellido = entrada.nextLine();
+        System.out.print("DNI :");
+        DNI = entrada.nextLine();
+        System.out.print("Edad :");
+        edad = entrada.nextInt();
+        Persona p2 = new Persona(DNI, nombre, apellido, edad);
+
         if (p1.edad < 18) {
-            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "Es menor de edad");
+            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "es menor de edad");
         } else {
-            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "Es mayor de edad");
+            System.out.println(p1.nombre + " " + p1.apellido + " con DNI " + p1.DNI + " " + "es mayor de edad");
+        }
+        if (p2.edad < 18) {
+            System.out.println(p2.nombre + " " + p2.apellido + " con DNI " + p2.DNI + " " + "es menor de edad");
+        } else {
+            System.out.println(p2.nombre + " " + p2.apellido + " con DNI " + p2.DNI + " " + "es mayor de edad");
         }
     }
 
