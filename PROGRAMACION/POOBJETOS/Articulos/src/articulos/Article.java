@@ -12,4 +12,5 @@ public class Article {
     String nombre;
     double precio;
     
+   
 }
