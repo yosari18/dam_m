@@ -15,24 +15,21 @@ public class Punto_A1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int x;
+        int y;
 
-        Coordenadas p1 = new Coordenadas();
-        p1.x = 5;
-        p1.y = 0;
-        System.out.println("La coordenada del punto 1 es : (" + p1.x + "," + p1.y + ")");
+        Coordenadas p1 = new Coordenadas(5, 0);
+        Coordenadas p2 = new Coordenadas(10, 10);
+        Coordenadas p3 = new Coordenadas(-3, 7);
 
-        Coordenadas p2 = new Coordenadas();
-        p2.x = 10;
-        p2.y = 10;
-        System.out.println("La coordenada del punto 2 es : (" + p2.x + "," + p2.y + ")");
+        p1.setx(4);
+        p1.sety(5);
 
-        Coordenadas p3 = new Coordenadas();
-        p3.x = -3;
-        p3.y = 7;
+        System.out.println("La coordenada del punto 1 es : (" + p1.getx() + "," + p1.y + ")");
+        System.out.println("La coordenada del punto 2 es : (" + p2.getx() + "," + p2.gety() + ")");
+        System.out.println("La coordenada del punto 3 es : (" + p3.getx() + "," + p3.y + ")");
         
-        p3.y=p3.y-5;
-        System.out.println("La coordenada del punto 3 es : (" + p3.x + "," + p3.y + ")");
-        System.out.println("La suma  de p3 es " + (p3.x + p3.y));
+       
 
     }
 
