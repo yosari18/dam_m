@@ -36,4 +36,21 @@ public class Coordenadas {
         return this.y;
     }
 
+    public void imprime() {
+
+    }
+
+    public void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void desplaza(int dx, int dy) {
+
+    }
+
+    public int distancia(Coordenadas p) {
+
+    }
+
 }
