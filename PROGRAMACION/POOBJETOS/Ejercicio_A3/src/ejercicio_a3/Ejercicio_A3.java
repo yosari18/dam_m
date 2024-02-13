@@ -14,14 +14,12 @@ public class Ejercicio_A3 {
      */
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(0, 0, 5, 5);
-      
-        System.out.println("El perimetro del rectangulo es : " + r1.perimetro());
-        System.out.println("El area es :" + r1.area());
-        
-        
-        Rectangle r2 = new Rectangle(5, 5,0,0 );
-        System.out.println("El perimetro del rectangulo es : " + r1.perimetro());
-        System.out.println("El area es :" + r1.area());
+
+        r1.imprimir();
+        System.out.println("");
+        Rectangle r2 = new Rectangle(0, 0, 4, 5);
+        r2.setx1x2(1, 2);
+        r2.imprimir();
 
     }
 }

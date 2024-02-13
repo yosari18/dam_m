@@ -25,30 +25,11 @@ public class Ejercicio_A2 {
         System.out.print("Edad :");
         int edad = entrada.nextInt();
         Persona p1 = new Persona(DNI, nombre, apellido, edad);
-        
-        p1.setNombre("Rafa");
 
-        entrada.nextLine();
-        System.out.print("Nombre :");
-        nombre = entrada.nextLine();
-        System.out.print("Apellido :");
-        apellido = entrada.nextLine();
-        System.out.print("DNI :");
-        DNI = entrada.nextLine();
-        System.out.print("Edad :");
-        edad = entrada.nextInt();
-        Persona p2 = new Persona(DNI, nombre, apellido, edad);
+        Persona p = new Persona(DNI, nombre, apellido, edad);
+        p1.diferenciaEdad(p);
 
-        if (p1.edad < 18) {
-            System.out.println(p1.getNombre() + " " + p1.getApellido() + " con DNI " + p1.getDNI() + " " + "es menor de edad");
-        } else {
-            System.out.println(p1.getNombre() + " " + p1.getApellido() + " con DNI " + p1.getDNI() + " " + "es mayor de edad");
-        }
-        if (p2.edad < 18) {
-            System.out.println(p2.getNombre() + " " + p2.getApellido() + " con DNI " + p2.getDNI() + " " + "es menor de edad");
-        } else {
-            System.out.println(p2.getNombre() + " " + p2.getApellido() + " con DNI " + p2.getDNI() + " " + "es mayor de edad");
-        }
+        p1.imprime();
     }
 
 }

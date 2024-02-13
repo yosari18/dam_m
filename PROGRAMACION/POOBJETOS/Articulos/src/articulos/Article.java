@@ -14,14 +14,14 @@ public class Article {
 
     private String nombre;
     private double precioSinIva;
-    private double IVA;
+    private final double IVA = 0.21;
     private int cuantasQuedan;
 
-    public Article(String nombre, double precioSinIva, double IVA, int cuantasQuedan) {
+    public Article(String nombre, double precioSinIva, int cuantasQuedan) {
         if (nombre.equals(nombre) && precioSinIva >= 1 && IVA == 0.21 && cuantasQuedan > 1) {
             this.nombre = nombre;
             this.precioSinIva = precioSinIva;
-            this.IVA = IVA;
+
             this.cuantasQuedan = cuantasQuedan;
         } else {
             System.out.println("**ERROR  Algunos de los valores que ingreso son incorrectos ");
@@ -54,11 +54,26 @@ public class Article {
     }
 
     public void setIVA(double IVA) {
-        this.IVA = IVA;
+        // this.IVA = IVA;
     }
 
     public void setCuantasQuedan(int cuantasQuedan) {
         this.cuantasQuedan = cuantasQuedan;
+    }
+
+    public double getPVP() {
+        return getPrecioSinIva() * (getIVA() + 1);
+    }
+
+    public double getPVPDescuento() {
+        return getPrecioSinIva() * (getIVA());
+    }
+
+    public boolean getvender(int cuantasQuedan) {
+        this.cuantasQuedan = cuantasQuedan;
+
+        return (this.cuantasQuedan > 0) ? true : false;
+
     }
 
 }

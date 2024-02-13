@@ -46,11 +46,12 @@ public class Coordenadas {
     }
 
     public void desplaza(int dx, int dy) {
-
+        this.x = this.x + dx;
+        this.y = this.y + dy;
     }
 
-    public int distancia(Coordenadas p) {
-
+    public static  Coordenadas creaPuntoAleatorio() {
+      Coordenadas punt=new Coordenadas(Math.random()*101);
     }
 
 }

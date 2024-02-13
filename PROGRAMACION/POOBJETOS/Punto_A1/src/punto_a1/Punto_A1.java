@@ -17,7 +17,7 @@ public class Punto_A1 {
         // TODO code application logic here
         int x;
         int y;
-
+        Coordenadas p = new Coordenadas(5, 7);
         Coordenadas p1 = new Coordenadas(5, 0);
         Coordenadas p2 = new Coordenadas(10, 10);
         Coordenadas p3 = new Coordenadas(-3, 7);
@@ -28,8 +28,6 @@ public class Punto_A1 {
         System.out.println("La coordenada del punto 1 es : (" + p1.getx() + "," + p1.y + ")");
         System.out.println("La coordenada del punto 2 es : (" + p2.getx() + "," + p2.gety() + ")");
         System.out.println("La coordenada del punto 3 es : (" + p3.getx() + "," + p3.y + ")");
-         Coordenadas p= new Coordenadas(5, 7);
-       
 
     }
 

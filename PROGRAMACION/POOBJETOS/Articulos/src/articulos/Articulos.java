@@ -14,8 +14,8 @@ public class Articulos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        Article Art1 = new Article("camisa", 10, 0.21, 2);
+        
+        Article Art1 = new Article("camisa", 10, 2);
         /* double precioConIva1 = Art1.precioSinIva * (Art1.IVA + 1);
         System.out.println(Art1.nombre + " - Precio: " + Art1.precioSinIva + "€ - IVA: " + (Art1.IVA * 100) + "% - PVP: " + precioConIva1 + "€");
         System.out.println("");
@@ -23,8 +23,9 @@ public class Articulos {
         double precioConIva2 = Art2.precioSinIva * (Art2.IVA + 1);
         System.out.println(Art2.nombre + " - Precio: " + Art2.precioSinIva + "€ - IVA: " + (Art2.IVA * 100) + "% - PVP: " + precioConIva2 + "€");
          */
-        double precioConIva1 = Art1.getPrecioSinIva() * (Art1.getIVA() + 1);
-        System.out.println(Art1.getNombre() + " - Precio: " + Art1.getPrecioSinIva() + "€ - IVA: " + (Art1.getIVA() * 100) + "% - PVP: " + precioConIva1 + "€");
         
-      }
+        System.out.println(Art1.getNombre() + " - Precio: " + Art1.getPrecioSinIva() + "€ - IVA: " + (Art1.getIVA() * 100) + "% - PVP: " + Art1.getPVP() + "€");
+        System.out.println(Art1.getPVPDescuento());
+        System.out.println(Art1.getvender(0));
+    }
 }

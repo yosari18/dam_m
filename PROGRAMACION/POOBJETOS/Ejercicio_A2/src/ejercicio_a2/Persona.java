@@ -53,6 +53,21 @@ public class Persona {
     public int getEdad() {
         return edad;
     }
+    public void imprime(){
+        System.out.println(this.nombre+" "+this.apellido+" tiene "+this.edad+"anios DNI "+this.edad);
+   
+    }
+    public boolean esMayorEdad(){
+    return (this.edad>18)? true:false;
+    
+    }
+    
+    public boolean esJubilado(){
+    return (this.edad>65)? true:false;
+    }
+    public int  diferenciaEdad(Persona p){
+    return (this.edad>p.edad)? this.edad:p.edad;
+    }
     
 
 }
