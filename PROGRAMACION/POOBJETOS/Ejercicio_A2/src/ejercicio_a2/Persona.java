@@ -68,6 +68,12 @@ public class Persona {
         System.out.println(this.nombre + " " + this.apellido + " tiene " + this.edad + " anios DNI " + this.DNI + " ");
     }
 
+    @Override
+    public String toString() {
+        return "Persona  " + "DNI=" + DNI + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", mayoriaDeEdad=" + mayoriaDeEdad ;
+    }
+    
+
     public boolean esMayorEdad() {
         return (this.edad > this.mayoriaDeEdad) ? true : false;
     }

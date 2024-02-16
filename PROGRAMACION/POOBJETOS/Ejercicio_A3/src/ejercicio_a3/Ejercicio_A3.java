@@ -13,13 +13,17 @@ public class Ejercicio_A3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(0, 0, 5, 5);
+       Rectangle p =new Rectangle(2,5,7,8);
+       
 
-        r1.imprimir();
-        System.out.println("");
-        Rectangle r2 = new Rectangle(0, 0, 4, 5);
-        r2.setx1x2(1, 2);
-        r2.imprimir();
+        
+        Rectangle arr[] = new Rectangle[3];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Rectangle.ale();
+            arr[i].imprimir();
+
+        }
+
 
     }
 }

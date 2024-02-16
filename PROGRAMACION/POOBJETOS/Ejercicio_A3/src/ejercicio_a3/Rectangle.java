@@ -4,6 +4,8 @@
  */
 package ejercicio_a3;
 
+import java.util.Random;
+
 /**
  *
  * @author yosari
@@ -15,8 +17,11 @@ public class Rectangle {
     private int x2;
     private int y2;
 
+    private static final int min = 0;
+    private static final int max = 100;
+
     public Rectangle(int x1, int y1, int x2, int y2) {
-        if ((x2 > x1) && (y2 > y1)) {
+        if ((x1 >= 1 && y1 >= 1) && (x2 < 100 && y2 < 100)) {
             this.x1 = x1;
             this.x2 = x2;
             this.y1 = y1;
@@ -26,6 +31,16 @@ public class Rectangle {
             System.out.println("**ERROR al instanciar el rectangulo");
         }
 
+    }
+
+    public static Rectangle ale() {
+        Random ran = new Random();
+        int x1 = ran.nextInt(99) + 0;
+        int y1 = ran.nextInt(99) + 0;
+        int x2 = ran.nextInt(99) + 0;
+        int y2 = ran.nextInt(99) + 0;
+
+        return new Rectangle(x1, y1, x2, y2);
     }
 
     public int getarea() {
@@ -49,7 +64,7 @@ public class Rectangle {
 
     }
 
-    public void setxxyy(int x1, int x2,int y1, int y2) {
+    public void setxxyy(int x1, int x2, int y1, int y2) {
         this.x1 = x1;
         this.x2 = x2;
         this.y1 = y1;
@@ -61,6 +76,7 @@ public class Rectangle {
         this.x1 = x1;
         this.x2 = x2;
     }
+
     public void sety1y2(int y1, int y2) {
         this.y1 = y1;
         this.y2 = y2;
