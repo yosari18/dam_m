@@ -2,28 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package articulos;
+package ejercicio_cuenta;
 
 /**
  *
  * @author yosari
  */
-public class Articulos {
+public class EJERCICIO_CUENTA {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // TODO code application logic here
+        Cuenta c1 = new Cuenta("yoss", 34);
 
-        Article Art1 = new Article("polo", 10, 2);
-        Art1.imprime();
+        System.out.println(c1);
+        c1.retirar(4);
+        c1.retirar(2);
 
-      
-        System.out.println(  "cantidad actual :"+Art1.almacena(-3));
-        System.out.println("Se vendio :" + Art1.getvender(6));
-       
-
-       
-        Art1.almacena(3);
+        c1.ingresar(5);
+        c1.ingresar(1);
+        c1.ingresar(5);
+        c1.retirar(45);
     }
+
 }

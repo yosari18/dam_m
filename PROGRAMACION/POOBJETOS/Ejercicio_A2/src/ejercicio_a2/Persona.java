@@ -4,22 +4,32 @@
  */
 package ejercicio_a2;
 
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author yosari
  */
 public class Persona {
 
-    String DNI;
-    String nombre;
-    String apellido;
-    int edad;
-    public Persona(String DNI, String nombre, String apellido, int edad){
-        this.DNI=DNI;
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.edad=edad;
-    
+    private String DNI;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private final int mayoriaDeEdad = 18;
+
+    public Persona(String DNI, String nombre, String apellido, int edad) {
+        Scanner entrada = new Scanner(System.in);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        while (validarDNI(DNI) == false) {
+            System.out.print("Ingresar DNI  correcto:");
+            DNI = entrada.nextLine();
+        }
+        this.DNI = DNI;
+
     }
 
     public void setDNI(String DNI) {
@@ -53,21 +63,26 @@ public class Persona {
     public int getEdad() {
         return edad;
     }
-    public void imprime(){
-        System.out.println(this.nombre+" "+this.apellido+" tiene "+this.edad+"anios DNI "+this.edad);
-   
+
+    public void imprime() {
+        System.out.println(this.nombre + " " + this.apellido + " tiene " + this.edad + " anios DNI " + this.DNI + " ");
     }
-    public boolean esMayorEdad(){
-    return (this.edad>18)? true:false;
-    
+
+    public boolean esMayorEdad() {
+        return (this.edad > this.mayoriaDeEdad) ? true : false;
     }
-    
-    public boolean esJubilado(){
-    return (this.edad>65)? true:false;
+
+    public boolean esJubilado() {
+        return (this.edad > 65) ? true : false;
     }
-    public int  diferenciaEdad(Persona p){
-    return (this.edad>p.edad)? this.edad:p.edad;
+
+    public int diferenciaEdad(Persona p) {
+        return (this.edad > p.edad) ? this.edad : p.edad;
     }
-    
+
+    public static boolean validarDNI(String DNI) {
+        //return (DNI.length()==8 && (DNI.matches("[A-HJ-NP-TV-Z]")))? true:false;
+        return DNI.matches("\\d{8}[A-HJ-NP-TV-Z]");
+    }
 
 }

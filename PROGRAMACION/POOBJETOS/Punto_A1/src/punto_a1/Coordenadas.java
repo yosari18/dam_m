@@ -4,6 +4,8 @@
  */
 package punto_a1;
 
+import java.util.Random;
+
 /**
  *
  * @author yosari
@@ -37,6 +39,8 @@ public class Coordenadas {
     }
 
     public void imprime() {
+        System.out.println("Las coordendas son : (" + getx() + "," + gety() + ")");
+        creaPuntoAleatorio();
 
     }
 
@@ -50,8 +54,17 @@ public class Coordenadas {
         this.y = this.y + dy;
     }
 
-    public static  Coordenadas creaPuntoAleatorio() {
-      Coordenadas punt=new Coordenadas(Math.random()*101);
+    public int distancia(Coordenadas p) {
+        return (int) Math.sqrt((Math.pow(p.getx(), 2)) + (Math.pow(p.gety(), 2)));
+    }
+
+    public static Coordenadas creaPuntoAleatorio() {
+        Random rand = new Random();
+        int inicio = -100;
+        int ultimo = 100;
+        int x = rand.nextInt(21) -10;
+        int y = rand.nextInt(21) - 10;
+        return new Coordenadas(x, y);
     }
 
 }

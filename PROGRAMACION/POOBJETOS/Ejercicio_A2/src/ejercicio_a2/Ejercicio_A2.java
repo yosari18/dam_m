@@ -12,23 +12,18 @@ import java.util.Scanner;
  */
 public class Ejercicio_A2 {
 
-    static Scanner entrada = new Scanner(System.in);
-
     public static void main(String[] args) {
-
+        Scanner entrada = new Scanner(System.in);
         System.out.print("Nombre :");
         String nombre = entrada.nextLine();
         System.out.print("Apellido :");
         String apellido = entrada.nextLine();
-        System.out.print("DNI :");
-        String DNI = entrada.nextLine();
         System.out.print("Edad :");
         int edad = entrada.nextInt();
+        entrada.nextLine();
+        System.out.print("DNI :");
+        String DNI = entrada.nextLine();
         Persona p1 = new Persona(DNI, nombre, apellido, edad);
-
-        Persona p = new Persona(DNI, nombre, apellido, edad);
-        p1.diferenciaEdad(p);
-
         p1.imprime();
     }
 
