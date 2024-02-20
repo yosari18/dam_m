@@ -11,34 +11,55 @@ package articulos;
 public class Article {
 
     private String nombre;
-    private double precioSinIva;
-    private final double IVA = 0.21;
-    private int cuantasQuedan;
+    private double preu;
+    private double IVA;
+    private int QuantsQueden;
 
-    public Article(String nombre, double precioSinIva, int cuantasQuedan) {
-        if (nombre.equals(nombre) && precioSinIva >= 1 && IVA == 0.21 && cuantasQuedan > 1) {
+    public Article(String nombre, double preu, double IVA, int QuantsQueden) {
+        if (nombre != null) {
             this.nombre = nombre;
-            this.precioSinIva = precioSinIva;
-            this.cuantasQuedan = cuantasQuedan;
         } else {
-            System.out.println("**ERROR  Algunos de los valores que ingreso son incorrectos ");
+            System.out.println("*** ERROR  nombres ");
         }
+        if (preu >= 1) {
+            this.preu = preu;
+        } else {
+            System.out.println("*** ERROR  precio ");
+        }
+        if (IVA == 21 || IVA == 10 || IVA == 4) {
+            if (IVA == 21) {
+                this.IVA = 0.21;
+            } else if (IVA == 10) {
+                this.IVA = 0.10;
+            } else if (IVA == 4) {
+                this.IVA = 0.4;
+            }
+        } else {
+            System.out.println("*** ERROR:  IVA " + IVA + "% no vàlid");
+        }
+        if (QuantsQueden > 1) {
+            this.QuantsQueden = QuantsQueden;
+        } else {
+            System.out.println("*** ERROR: El stock no pot ser menor que 0 ");
+        }
+
     }
 
-    public String getNombre() {
+    public String getNom() {
         return nombre;
     }
 
-    public double getPrecioSinIva() {
-        return precioSinIva;
+    public double getPreu() {
+        return preu;
     }
 
     public double getIVA() {
+
         return IVA;
     }
 
-    public int getCuantasQuedan() {
-        return cuantasQuedan;
+    public int getQuantsQueden() {
+        return QuantsQueden;
     }
 
     public void setNombre(String nombre) {
@@ -50,58 +71,60 @@ public class Article {
 
     }
 
-    public void setPrecioSinIva(double precioSinIva) {
-        if (this.precioSinIva > 0) {
-            this.precioSinIva = precioSinIva;
+    public void setPreu(double precioNu) {
+        if (precioNu > 0) {
+            this.preu = precioNu;
         } else {
-            System.out.println("Tenemos errores en precio sin iva ");
+            System.out.println("*** ERROR: El preu no pot ser menor que 0 ");
         }
-
     }
 
-    public void setIVA(double IVA) {
-
+    public void setIva(double IVA) {
+        if (IVA == 21 || IVA == 10 || IVA == 4) {
+            this.IVA = IVA;
+        } else {
+            System.out.println("*** ERROR: IVA " + IVA + "%  no vàlid");
+        }
     }
 
-    public void setCuantasQuedan(int cuantasQuedan) {
-        if (this.cuantasQuedan > 1) {
-            this.cuantasQuedan = cuantasQuedan;
+    public void setQuantsQueden(int cuantasQuedan) {
+        if (this.QuantsQueden > 1) {
+            this.QuantsQueden = cuantasQuedan;
         } else {
             System.out.println("Tenemos errores en cantidades de producto");
         }
     }
 
     public double getPVP() {
-        return getPrecioSinIva() * (getIVA() + 1);
+        return getPreu() * (getIVA() + 1);
     }
 
-    public double getPVPDescuento() {
-        return getPrecioSinIva() * (getIVA());
+    public double getPVPDescompte(int descuento) {
+        return getPreu() * (getIVA());
     }
 
-    public boolean getvender(int cantidad) {
-       if (cantidad <= this.cuantasQuedan) {
-            this.cuantasQuedan -= cantidad;
+    public boolean vendre(int cantidad) {
+        if (cantidad <= this.QuantsQueden) {
+            this.QuantsQueden -= cantidad;
             return true;
         } else {
-            System.out.println("Error: No hay suficiente stock para vender " + cantidad + " unidades del artículo '" + nombre + "'.");
+            //System.out.println("Error: No hay suficiente stock para vender " + cantidad + " unidades del artículo '" + nombre + "'.");
             return false;
         }
     }
 
-    public boolean almacena(int cantida) {
+    public boolean emmagatzema(int cantida) {
         if (cantida < 0) {
             System.out.println("Error: No se puede almacenar una cantidad negativa de artículos.");
             return false;
         }
 
-        // Actualizar el stock sumando o restando la cantidad según sea necesario
-        this.cuantasQuedan += cantida;
+        this.QuantsQueden += cantida;
         return true;
     }
 
-    public void imprime() {
-        System.out.println("Producto : " + getNombre() + "\nPrecio   : " + getPrecioSinIva() + "\nIVA      : " + (getIVA()) + "%\nPVP      : " + getPVP() + "€");
+    public void imprimeix() {
+        System.out.println(getNom() + " - Preu:" + getPreu() + "% - IVA:" + this.IVA + "% - PVP: " + getPVP() + "€" + " (queden " + getQuantsQueden() + " articles)");
 
     }
 

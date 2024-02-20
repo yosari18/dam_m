@@ -9,17 +9,16 @@ package ejemvehiculo;
  * @author yosari
  */
 public class Cliente {
+
     private String DNI;
     private String nombre;
-    private String apellido ;
+    private String apellido;
 
     public Cliente(String DNI, String nombre, String apellido) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
     }
-    
-    
 
     public String getDNI() {
         return DNI;
@@ -32,7 +31,5 @@ public class Cliente {
     public String getApellido() {
         return apellido;
     }
-    
-    
-    
+
 }

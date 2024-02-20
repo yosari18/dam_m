@@ -25,6 +25,13 @@ public class Vehiculo {
         this.disponible = disponible;
     }
 
+    public Vehiculo(String matricula, String marca) {
+        this.matricula = matricula;
+        this.marca = marca;
+    }
+    
+    
+
     public String getMatricula() {
         return this.matricula;
     }
