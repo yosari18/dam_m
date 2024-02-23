@@ -1,3 +1,26 @@
-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
+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
+
+
+calcula: calculadora.c calc.o
+	gcc -wall -g calculadora.c calc.o -o calculadora
+calc.o: calc.c calc.h
+	gcc -g -wall -c calc.c -o calc.o
+
+
+
+.PHONY : install
+ install : clean calcula
+	rm -rf ../dist
+	mkdir -p ../dist/usr/bin/calc
+	cp calcula ../dist/usr/bin/calc
+
+.PHONY : targz
+ targz : clean
+	 mkdir -p source
+ 	cp *.c *.h Makefile source
+	tar -cvf calcula.tar source
+	gzip calcula.tar
+	rm -rf calcula.tar
+	rm -rf source
 
 
