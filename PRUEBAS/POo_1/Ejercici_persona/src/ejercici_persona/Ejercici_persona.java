@@ -14,7 +14,9 @@ public class Ejercici_persona {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Persona p1 = new Persona();
+        p1.generarDNI();
+        System.out.println(p1);
     }
-    
+
 }

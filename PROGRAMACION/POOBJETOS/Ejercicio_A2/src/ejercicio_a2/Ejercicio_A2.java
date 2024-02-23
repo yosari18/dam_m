@@ -4,6 +4,7 @@
  */
 package ejercicio_a2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,18 +14,20 @@ import java.util.Scanner;
 public class Ejercicio_A2 {
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.print("Nombre :");
-        String nombre = entrada.nextLine();
-        System.out.print("Apellido :");
-        String apellido = entrada.nextLine();
-        System.out.print("Edad :");
-        int edad = entrada.nextInt();
-        entrada.nextLine();
-        System.out.print("DNI :");
-        String DNI = entrada.nextLine();
-        Persona p1 = new Persona(DNI, nombre, apellido, edad);
-        p1.imprime();
+
+        ArrayList llista = new ArrayList();
+
+        llista.add(-25);
+        llista.add(3.14);
+        llista.add('A');
+        llista.add("luis");
+        llista.add(new Persona("12345678A", "maro", "lol", 13));
+        llista.add(new Persona("12345678A", "mari", "lolaaa", 19));
+        for (int i = 0; i < llista.size(); i++) {
+            System.out.println(llista.get(i));
+
+        }
+
     }
 
 }

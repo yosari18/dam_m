@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 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
 
 
@@ -22,5 +23,8 @@ calc.o: calc.c calc.h
 	gzip calcula.tar
 	rm -rf calcula.tar
 	rm -rf source
+=======
+>>>>>>> 1cef00da1dadb537083c617134677a7afb18ea52
 
 
+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
