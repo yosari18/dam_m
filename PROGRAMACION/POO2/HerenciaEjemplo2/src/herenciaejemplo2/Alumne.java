@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package herenciaejem;
+package herenciaejemplo2;
 
 /**
  *
  * @author yosari
  */
-public class Alumne extends Persona{
+public class Alumne extends Persona2{
     private String assignatira;
     private  double nota;
     
@@ -16,6 +16,9 @@ public class Alumne extends Persona{
         super(nom, DNI);
         this.assignatira=assignatira;
         this.nota=nota;
+        
+        
+        super.DNI="1837474995";
     }
 
     public String getAssignatira() {

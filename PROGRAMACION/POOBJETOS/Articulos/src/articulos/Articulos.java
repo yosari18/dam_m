@@ -15,14 +15,10 @@ public class Articulos {
      */
     public static void main(String[] args) {
 
-<<<<<<< HEAD
-       System.out.println("\n####### \nInstanciem article1:");
-        Article article1 = new Article("PantalÃ³", 55.5, 21, -5);
-=======
-         
+
         System.out.println("\n####### \nInstanciem article1:");
         Article article1 = new Article("Pantaló", 55.5, 21, -5);
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
+
         
         System.out.println("\n####### \nInstanciem article2:");
         Article article2 = new Article("Pijana", 100, 21, 10);
@@ -30,22 +26,22 @@ public class Articulos {
 
         System.out.println("\n####### \nCanvi de preu article2:");
         article2.setPreu(0);
-<<<<<<< HEAD
+
         System.out.println("El preu d'a2 Ã©s: " + article2.getPreu());
-=======
+
         System.out.println("El preu d'a2 és: " + article2.getPreu());
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
+
 
         System.out.println("\n####### \nCanvi quants queden article2:");
         article2.setQuantsQueden(13);
         article2.imprimeix();
 
         System.out.println("\n####### \nCalcular descompte d'article2:");
-<<<<<<< HEAD
+
         System.out.println("El PVP d'a2 amb 20% de descompte Ã©s: " + article2.getPVPDescompte(20) + "â¬");
-=======
+
         System.out.println("El PVP d'a2 amb 20% de descompte és: " + article2.getPVPDescompte(20) + "€");
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
+
         
         System.out.println("\n####### \nVendre unitats d'article2:");
         int unitats = 24;
@@ -76,10 +72,10 @@ public class Articulos {
         
     }
     
-<<<<<<< HEAD
+
 }
-=======
-}
+
+
    
 
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
+

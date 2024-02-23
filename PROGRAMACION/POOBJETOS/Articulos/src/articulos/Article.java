@@ -12,22 +12,13 @@ public class Article {
     private String nombre;
     private double preu;
     private double IVA;
-<<<<<<< HEAD
-    private int QuantsQueden;
-
-    public Article(String nombre, double preu, double IVA, int QuantsQueden) {
-        if (nombre != null) {
-            this.nombre = nombre;
-        } else {
-            System.out.println("*** ERROR  nombres ");
-=======
     private static final double IVA1 = 21;
     private static final double IVA2 = 10;
     private static final double IVA3 = 4;
     private int cuantasQuedan;
 
     /*
-   Comprobamos que los parámetros estén correctos, de lo contrario, se mostrará un mensaje de error.
+   Comprobamos que los parÃ¡metros estÃ©n correctos, de lo contrario, se mostrarÃ¡ un mensaje de error.
      */
     public Article(String nombre, double preu, double IVA, int cuantasQuedan) {
         if (nombre != null && !nombre.isEmpty()) {
@@ -49,30 +40,7 @@ public class Article {
             this.cuantasQuedan = cuantasQuedan;
         } else {
             System.out.println("*** ERROR: El stock no pot ser menor que 0");
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
         }
-        if (preu >= 1) {
-            this.preu = preu;
-        } else {
-            System.out.println("*** ERROR  precio ");
-        }
-        if (IVA == 21 || IVA == 10 || IVA == 4) {
-            if (IVA == 21) {
-                this.IVA = 0.21;
-            } else if (IVA == 10) {
-                this.IVA = 0.10;
-            } else if (IVA == 4) {
-                this.IVA = 0.4;
-            }
-        } else {
-            System.out.println("*** ERROR:  IVA " + IVA + "% no vàlid");
-        }
-        if (QuantsQueden > 1) {
-            this.QuantsQueden = QuantsQueden;
-        } else {
-            System.out.println("*** ERROR: El stock no pot ser menor que 0 ");
-        }
-
     }
 
     public String getNom() {
@@ -84,16 +52,11 @@ public class Article {
     }
 
     public double getIVA() {
-
         return IVA;
     }
 
     public int getQuantsQueden() {
-<<<<<<< HEAD
-        return QuantsQueden;
-=======
         return cuantasQuedan;
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
     }
 
     public void setNombre(String nombre) {
@@ -104,46 +67,31 @@ public class Article {
         }
     }
 
-<<<<<<< HEAD
-    public void setPreu(double precioNu) {
-        if (precioNu > 0) {
-            this.preu = precioNu;
-        } else {
-            System.out.println("*** ERROR: El preu no pot ser menor que 0 ");
-=======
     public void setPreu(double precioSinIva) {
         if (precioSinIva > 0) {
             this.preu = precioSinIva;
         } else {
             System.out.println("***ERROR: El preu no pot ser menor que 0");
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
         }
     }
+
+    /*
+    @param si el parámetro es incorrecto muestra mensaje de error
+     */
 
     public void setIva(double IVA) {
-<<<<<<< HEAD
-        if (IVA == 21 || IVA == 10 || IVA == 4) {
-            this.IVA = IVA;
-        } else {
-            System.out.println("*** ERROR: IVA " + IVA + "%  no vàlid");
-        }
-    }
-
-    public void setQuantsQueden(int cuantasQuedan) {
-        if (this.QuantsQueden > 1) {
-            this.QuantsQueden = cuantasQuedan;
-        } else {
-=======
         if (IVA == IVA1 || IVA == IVA2 || IVA == IVA3) {
             this.IVA = IVA;
         } else {
-            System.out.println("*** ERROR:  IVA " + IVA + "% no valid");
+            System.out.println("*** ERROR:  IVA " + IVA + "% no vàlid");
         }
     }
+    /*
+    
+    */
 
     public int setQuantsQueden(int cuantasQuedan) {
         if (cuantasQuedan < 0) {
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
             System.out.println("Tenemos errores en cantidades de producto");
         } else {
             return this.cuantasQuedan = cuantasQuedan;
@@ -151,22 +99,10 @@ public class Article {
         return 0;
     }
 
+    /*
+    @return devuelve el precio con el iva aplicado
+     */
     public double getPVP() {
-<<<<<<< HEAD
-        return getPreu() * (getIVA() + 1);
-    }
-
-    public double getPVPDescompte(int descuento) {
-        return getPreu() * (getIVA());
-    }
-
-    public boolean vendre(int cantidad) {
-        if (cantidad <= this.QuantsQueden) {
-            this.QuantsQueden -= cantidad;
-            return true;
-        } else {
-            //System.out.println("Error: No hay suficiente stock para vender " + cantidad + " unidades del artículo '" + nombre + "'.");
-=======
         return (this.preu / 100.0 * this.IVA) + this.preu;
     }
 
@@ -186,37 +122,26 @@ public class Article {
             this.cuantasQuedan -= cantidad;
             return true;
         } else {
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
             return false;
         }
     }
 
-<<<<<<< HEAD
-=======
     /*
     @param Recibe la cantidad de productos y lo actualiza
      */
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
     public boolean emmagatzema(int cantida) {
         if (cantida < 0) {
-            System.out.println("Error: No se puede almacenar una cantidad negativa de artículos.");
+            System.out.println("Error: No se puede almacenar una cantidad negativa de artÃ­culos.");
             return false;
         }
-<<<<<<< HEAD
-
-        this.QuantsQueden += cantida;
-=======
         this.cuantasQuedan += cantida;
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
         return true;
     }
 
+    /*
+    Muestra el producto con toda su información
+     */
     public void imprimeix() {
-<<<<<<< HEAD
-        System.out.println(getNom() + " - Preu:" + getPreu() + "% - IVA:" + this.IVA + "% - PVP: " + getPVP() + "€" + " (queden " + getQuantsQueden() + " articles)");
-
-=======
-        System.out.println(getNom() + " - Preu: " + getPreu() + " - IVA: " + this.getIVA() + "% - PVP: " + getPVP() + "€ (queden " + this.setQuantsQueden(cuantasQuedan) + " articles )");
->>>>>>> c61860e0d1c9ea596aa6f4bbcfa66d028738ce40
+        System.out.println(getNom() + " - Preu: " + getPreu() + " - IVA: " + this.getIVA() + "% - PVP: " + getPVP() + "â¬ (queden " + this.setQuantsQueden(cuantasQuedan) + " articles )");
     }
 }

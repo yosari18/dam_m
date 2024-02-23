@@ -75,7 +75,6 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.DNI = DNI;
-        this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
     }
@@ -109,14 +108,16 @@ public class Persona {
 
     public void generarDNI() {
         Random ran = new Random();
-        int num = 0;
-        char let = (char) (ran.nextInt(89) + 65);
-        for (int i = 0; i < 8; i++) {
-            num = ran.nextInt(8) + 0;
-            System.out.print(num);
+        int numDNI []=new int[8] ;
+         char let = (char) (ran.nextInt(26) + 65);
+      for (int i = 0; i < 8; i++) {
+           numDNI[i]=ran.nextInt(10);
+            System.out.print(numDNI[i]);
         }
-
         System.out.println(let);
+        
+
+      
     }
 
     public String getNombre() {
