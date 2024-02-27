@@ -63,7 +63,7 @@ public class Article {
         if (nombre != null && !nombre.isEmpty()) {
             this.nombre = nombre;
         } else {
-            System.out.println("Tenemos errores en el nombre");
+            System.out.println("***ERROR:  El nom no pot estar buit");
         }
     }
 
@@ -78,7 +78,6 @@ public class Article {
     /*
     @param si el parámetro es incorrecto muestra mensaje de error
      */
-
     public void setIva(double IVA) {
         if (IVA == IVA1 || IVA == IVA2 || IVA == IVA3) {
             this.IVA = IVA;
@@ -86,13 +85,13 @@ public class Article {
             System.out.println("*** ERROR:  IVA " + IVA + "% no vàlid");
         }
     }
-    /*
-    
-    */
 
+    /*
+    @param recibe la cantidad de producto
+     */
     public int setQuantsQueden(int cuantasQuedan) {
         if (cuantasQuedan < 0) {
-            System.out.println("Tenemos errores en cantidades de producto");
+            System.out.println("*** ERROR: El stock no pot ser menor que 0");
         } else {
             return this.cuantasQuedan = cuantasQuedan;
         }

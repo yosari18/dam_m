@@ -54,7 +54,8 @@ public class Persona {
     private String nombre;
     private int edad;
     private String DNI;
-    private String sexo;
+    private char sexoH;
+    private static  final char sexo = 'H';
     private double peso;
     private double altura;
 
@@ -68,19 +69,20 @@ public class Persona {
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;
+        this.sexoH = sexo;
     }
 
-    public Persona(String nombre, int edad, String DNI, double peso, double altura) {
+    public Persona(String nombre, int edad, char sexoH, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
-        this.DNI = DNI;
+       
         this.peso = peso;
+        this.sexoH=sexoH;
         this.altura = altura;
     }
 
     public int calcularIMC() {
-        int pesoIdeal = (int) ((int) Math.pow(this.altura, 2) / this.peso);
+        int pesoIdeal = (int) ((int)  this.peso /Math.pow(this.altura, 2));
         if (pesoIdeal < 20) {
             return peso_normal;
         } else if (20 >= 25) {
@@ -99,25 +101,21 @@ public class Persona {
     }
 
     public void comprobarSexo(char sexo) {
-        if (this.sexo == "H") {
-            this.sexo = "H";
-        } else {
-            this.sexo = "H";
+        if (sexo !='H' && sexo!='M') {
+            this.sexoH = sexo ;
         }
     }
 
     public void generarDNI() {
         Random ran = new Random();
-        int numDNI []=new int[8] ;
-         char let = (char) (ran.nextInt(26) + 65);
-      for (int i = 0; i < 8; i++) {
-           numDNI[i]=ran.nextInt(10);
+        int numDNI[] = new int[8];
+        char let = (char) (ran.nextInt(26) + 65);
+        for (int i = 0; i < 8; i++) {
+            numDNI[i] = ran.nextInt(10);
             System.out.print(numDNI[i]);
         }
         System.out.println(let);
-        
 
-      
     }
 
     public String getNombre() {
@@ -132,7 +130,7 @@ public class Persona {
         return this.DNI;
     }
 
-    public String getSexo() {
+    public char getSexo() {
         return this.sexo;
     }
 
@@ -144,9 +142,40 @@ public class Persona {
         return this.altura;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public void setSexoH(char sexoH) {
+        this.sexoH = sexoH;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+    
+
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", edad=" + edad + ", DNI=" + DNI + ", sexo=" + sexo + ", peso=" + peso + ", altura=" + altura + '}';
+        String sexo1 ;
+        if(this.sexoH=='M'){
+        sexo1 ="Mujer";
+        }else{
+        sexo1="Hombre";
+        }
+        return "Persona  \n" + "nombre :" + nombre + ",  \nedad :" + edad + ",  \nDNI:" + DNI + ",  \nsexo :" +sexo1 + ",  \npeso :" + peso + ",  \naltura :" + altura ;
     }
 
 }

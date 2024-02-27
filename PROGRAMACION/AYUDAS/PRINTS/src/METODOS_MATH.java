@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -98,6 +101,12 @@ PI: el número pi (3.141592653589793)
         int resultadoo=(int) (Math.random()*(max-min+1)+min);
         
         
+        Random r=new Random();
+        int arr[]= new int [15];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=r.nextInt(10)-19;
+            System.out.print(arr[i]+" ");
+        }
     }
 
 }
